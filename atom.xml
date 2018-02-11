@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-02-11T05:53:57.090Z</updated>
+  <updated>2018-02-11T05:55:36.558Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2018/02/11/CF909E/"/>
     <id>http://yoursite.com/2018/02/11/CF909E/</id>
     <published>2018-02-11T04:34:39.000Z</published>
-    <updated>2018-02-11T05:53:57.090Z</updated>
+    <updated>2018-02-11T05:55:36.558Z</updated>
     
     <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h4><p>Some of the tasks in the graph can only be executed on a coprocessor, and the rest can only be executed on the main processor. In one coprocessor call you can send it a set of tasks which can only be executed on it. For each task of the set, all tasks on which it depends must be either already completed or be included in the set. The main processor starts the program execution and gets the results of tasks executed on the coprocessor automatically.</p><p>Find the minimal number of coprocessor calls which are necessary to execute the given program.</p><p>Input<br>The first line contains two space-separated integers N (1 ≤ N ≤ 105) — the total number of tasks given, and M (0 ≤ M ≤ 105) — the total number of dependencies between tasks.</p><p>The next line contains N space-separated integers . If Ei = 0, task i can only be executed on the main processor, otherwise it can only be executed on the coprocessor.</p><p>The next M lines describe the dependencies between tasks. Each line contains two space-separated integers T1 and T2 and means that task T1 depends on task T2 (T1 ≠ T2). Tasks are indexed from 0 to N - 1. All M pairs (T1, T2) are distinct. It is guaranteed that there are no circular dependencies between tasks.</p><p><em>abc</em></p><p><strong>abc</strong></p>]]></content>
     
