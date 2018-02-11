@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="####题目: 123456789101112You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results">
-<meta name="keywords" content="topo排序+贪心">
+<meta name="description" content="####题目: You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or sever">
+<meta name="keywords" content="topo排序,贪心">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF909E Coprocessor">
 <meta property="og:url" content="http://yoursite.com/2018/02/11/CF909E/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="####题目: 123456789101112You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results">
+<meta property="og:description" content="####题目: You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or sever">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-11T04:40:25.190Z">
+<meta property="og:updated_time" content="2018-02-11T04:44:00.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CF909E Coprocessor">
-<meta name="twitter:description" content="####题目: 123456789101112You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results">
+<meta name="twitter:description" content="####题目: You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or sever">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -183,7 +183,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/topo排序-贪心/">topo排序+贪心</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/topo排序-贪心/">topo排序,贪心</a></li></ul>
                     </div>
                 </section>
                 
@@ -288,7 +288,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/topo排序-贪心/">topo排序+贪心</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/topo排序-贪心/">topo排序,贪心</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -299,7 +299,12 @@
       
           
         <p>####题目:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or several other tasks, and there are no directed circular dependencies between tasks. A task can only be executed if all tasks it depends on have already completed.</span><br><span class="line"></span><br><span class="line">Some of the tasks in the graph can only be executed on a coprocessor, and the rest can only be executed on the main processor. In one coprocessor call you can send it a set of tasks which can only be executed on it. For each task of the set, all tasks on which it depends must be either already completed or be included in the set. The main processor starts the program execution and gets the results of tasks executed on the coprocessor automatically.</span><br><span class="line"></span><br><span class="line">Find the minimal number of coprocessor calls which are necessary to execute the given program.</span><br><span class="line"></span><br><span class="line">Input</span><br><span class="line">The first line contains two space-separated integers N (1 ≤ N ≤ 105) — the total number of tasks given, and M (0 ≤ M ≤ 105) — the total number of dependencies between tasks.</span><br><span class="line"></span><br><span class="line">The next line contains N space-separated integers . If Ei = 0, task i can only be executed on the main processor, otherwise it can only be executed on the coprocessor.</span><br><span class="line"></span><br><span class="line">The next M lines describe the dependencies between tasks. Each line contains two space-separated integers T1 and T2 and means that task T1 depends on task T2 (T1 ≠ T2). Tasks are indexed from 0 to N - 1. All M pairs (T1, T2) are distinct. It is guaranteed that there are no circular dependencies between tasks.</span><br></pre></td></tr></table></figure>
+<p>You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or several other tasks, and there are no directed circular dependencies between tasks. A task can only be executed if all tasks it depends on have already completed.</p>
+<p>Some of the tasks in the graph can only be executed on a coprocessor, and the rest can only be executed on the main processor. In one coprocessor call you can send it a set of tasks which can only be executed on it. For each task of the set, all tasks on which it depends must be either already completed or be included in the set. The main processor starts the program execution and gets the results of tasks executed on the coprocessor automatically.</p>
+<p>Find the minimal number of coprocessor calls which are necessary to execute the given program.</p>
+<p>Input<br>The first line contains two space-separated integers N (1 ≤ N ≤ 105) — the total number of tasks given, and M (0 ≤ M ≤ 105) — the total number of dependencies between tasks.</p>
+<p>The next line contains N space-separated integers . If Ei = 0, task i can only be executed on the main processor, otherwise it can only be executed on the coprocessor.</p>
+<p>The next M lines describe the dependencies between tasks. Each line contains two space-separated integers T1 and T2 and means that task T1 depends on task T2 (T1 ≠ T2). Tasks are indexed from 0 to N - 1. All M pairs (T1, T2) are distinct. It is guaranteed that there are no circular dependencies between tasks.</p>
 
       
     </div>
@@ -311,7 +316,7 @@
         <p><span>Title:</span><a href="/2018/02/11/CF909E/">CF909E Coprocessor</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">NaOH</a></p>
         <p><span>Created:</span>2018-02-11, 12:34:39</p>
-        <p><span>Updated:</span>2018-02-11, 12:40:25</p>
+        <p><span>Updated:</span>2018-02-11, 12:44:00</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2018/02/11/CF909E/" title="CF909E Coprocessor">http://yoursite.com/2018/02/11/CF909E/</a>
             <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/02/11/CF909E/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
