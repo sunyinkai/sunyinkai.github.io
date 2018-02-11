@@ -24,7 +24,7 @@
 <meta property="og:description" content="题目:You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or several ot">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://codeforces.com/predownloaded/9b/23/9b230264d053f4d67fc85fa445cd108b8120528f.png">
-<meta property="og:updated_time" content="2018-02-11T06:24:07.014Z">
+<meta property="og:updated_time" content="2018-02-11T06:26:23.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CF909E Coprocessor">
 <meta name="twitter:description" content="题目:You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or several ot">
@@ -308,8 +308,8 @@
 <p>Some of the tasks in the graph can only be executed on a coprocessor, and the rest can only be executed on the main processor. In one coprocessor call you can send it a set of tasks which can only be executed on it. For each task of the set, all tasks on which it depends must be either already completed or be included in the set. The main processor starts the program execution and gets the results of tasks executed on the coprocessor automatically.</p>
 <p>Find the minimal number of coprocessor calls which are necessary to execute the given program.</p>
 <p>Input</p>
-<p>The first line contains two space-separated integers <em>N</em> (1 ≤ <em>N</em> ≤ $10^5$) — the total number of tasks given, and <em>M</em> (0 ≤ <em>M</em> ≤ $10^5$) — the total number of dependencies between tasks.</p>
-<p>The next line contains <em>N</em> space-separated integers <img src="http://codeforces.com/predownloaded/9b/23/9b230264d053f4d67fc85fa445cd108b8120528f.png" alt="img">. If $E_i$ = 0, task <em>i</em> can only be executed on the main processor, otherwise it can only be executed on the coprocessor.</p>
+<p>The first line contains two space-separated integers <em>N</em> (1 ≤ <em>N</em> ≤ $$10^5$$) — the total number of tasks given, and <em>M</em> (0 ≤ <em>M</em> ≤ $10^5$) — the total number of dependencies between tasks.</p>
+<p>The next line contains <em>N</em> space-separated integers <img src="http://codeforces.com/predownloaded/9b/23/9b230264d053f4d67fc85fa445cd108b8120528f.png" alt="img">. If $$E_i$$= 0, task <em>i</em> can only be executed on the main processor, otherwise it can only be executed on the coprocessor.</p>
 <p>The next <em>M</em> lines describe the dependencies between tasks. Each line contains two space-separated integers <em>T</em>1 and <em>T</em>2 and means that task <em>T</em>1 depends on task <em>T</em>2 (<em>T</em>1 ≠ <em>T</em>2). Tasks are indexed from 0 to <em>N</em> - 1. All <em>M</em> pairs (<em>T</em>1, <em>T</em>2) are distinct. It is guaranteed that there are no circular dependencies between tasks.</p>
 <p>Output</p>
 <p>Output one line containing an integer — the minimal number of coprocessor calls necessary to execute the program.</p>
@@ -340,7 +340,7 @@
         <p><span>Title:</span><a href="/2018/02/11/CF909E/">CF909E Coprocessor</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">NaOH</a></p>
         <p><span>Created:</span>2018-02-11, 12:34:39</p>
-        <p><span>Updated:</span>2018-02-11, 14:24:07</p>
+        <p><span>Updated:</span>2018-02-11, 14:26:23</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2018/02/11/CF909E/" title="CF909E Coprocessor">http://yoursite.com/2018/02/11/CF909E/</a>
             <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/02/11/CF909E/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
