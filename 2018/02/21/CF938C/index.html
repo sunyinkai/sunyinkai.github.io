@@ -15,17 +15,20 @@
 
 
 
-<meta name="description" content="ACM,ICPC,codeforce">
-<meta property="og:type" content="website">
-<meta property="og:title" content="标签云">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="题目Let’s denote a m-free matrix as a binary (that is, consisting of only 1’s and 0’s) matrix such that every square submatrix of size m × m of this matrix contains at least one zero. Consider the follo">
+<meta name="keywords" content="贪心,CF CDE,数学,思维">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF938C">
+<meta property="og:url" content="http://yoursite.com/2018/02/21/CF938C/index.html">
 <meta property="og:site_name" content="NaOH&#39;s">
-<meta property="og:description" content="ACM,ICPC,codeforce">
+<meta property="og:description" content="题目Let’s denote a m-free matrix as a binary (that is, consisting of only 1’s and 0’s) matrix such that every square submatrix of size m × m of this matrix contains at least one zero. Consider the follo">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-11T07:55:09.570Z">
+<meta property="og:image" content="http://codeforces.com/predownloaded/43/f1/43f1e11898ef657b1c1c02e1ae7b954c5230a2d9.png">
+<meta property="og:updated_time" content="2018-02-21T10:33:03.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签云">
-<meta name="twitter:description" content="ACM,ICPC,codeforce">
+<meta name="twitter:title" content="CF938C">
+<meta name="twitter:description" content="题目Let’s denote a m-free matrix as a binary (that is, consisting of only 1’s and 0’s) matrix such that every square submatrix of size m × m of this matrix contains at least one zero. Consider the follo">
+<meta name="twitter:image" content="http://codeforces.com/predownloaded/43/f1/43f1e11898ef657b1c1c02e1ae7b954c5230a2d9.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>标签云 | NaOH&#39;s</title>
+<title>CF938C | NaOH&#39;s</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,7 +70,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -251,11 +254,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-CF938C" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/tags/index.html" class="article-date">
-      <time datetime="2018-02-11T07:31:33.000Z" itemprop="datePublished">2018-02-11</time>
+      <a href="/2018/02/21/CF938C/" class="article-date">
+      <time datetime="2018-02-21T09:57:23.000Z" itemprop="datePublished">2018-02-21</time>
 </a>
 
 
@@ -270,7 +273,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      标签云
+      CF938C
     </h1>
   
 
@@ -280,6 +283,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF-CDE/">CF CDE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思维/">思维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贪心/">贪心</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -287,96 +294,87 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
+        <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>Let’s denote a <em>m</em>-free matrix as a binary (that is, consisting of only 1’s and 0’s) matrix such that every square submatrix of size <em>m</em> × <em>m</em> of this matrix contains at least one zero.</p>
+<p>Consider the following problem:</p>
+<p>You are given two integers <em>n</em> and <em>m</em>. You have to construct an <em>m</em>-free square matrix of size <em>n</em> × <em>n</em> such that the number of 1’s in this matrix is maximum possible. Print the maximum possible number of 1’s in such matrix.</p>
+<p>You don’t have to solve this problem. Instead, you have to construct a few tests for it.</p>
+<p>You will be given <em>t</em> numbers <em>x</em>1, <em>x</em>2, …, $x_t$. For every <img src="http://codeforces.com/predownloaded/43/f1/43f1e11898ef657b1c1c02e1ae7b954c5230a2d9.png" alt="img">, find two integers <em>n</em> and <em>m</em> (<em>n</em> ≥ <em>m</em>) such that the answer for the aforementioned problem is exactly <em>x</em> .</p>
+<p>Input</p>
+<p>The first line contains one integer <em>t</em> (1 ≤ <em>t</em> ≤ 100) — the number of tests you have to construct.</p>
+<p>Then <em>t</em> lines follow, <em>i</em>-th line containing one integer <em>x</em> (0 ≤ <em>x</em> ≤ $10^9$).</p>
+<p>Output</p>
+<p>For each test you have to construct, output two positive numbers <em>n</em> and <em>m</em> (1 ≤ <em>m</em>≤ <em>n</em> ≤ 10^9) such that the maximum number of 1’s in a <em>m</em>-free <em>n</em> × <em>n</em> matrix is exactly <em>x</em>. If there are multiple solutions, you may output any of them; and if this is impossible to construct a test, output a single integer  - 1.</p>
+<p>Example</p>
+<p>input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">21</span><br><span class="line">0</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5 2</span><br><span class="line">1 1</span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>不难发现对于每一个子阵,总是最右下方的那个地方置为0最合适,因为这样的<strong>潜力</strong>最大.</p>
+<p>问题转化为是否存在n,m使得$n^2$-$[n/m]^2$=x.</p>
+<p>既是 $a^2-b^2=C $</p>
+<p>转化一下 $ (a+b)(a-b)=C$</p>
+<p>然后再分解因子搞一搞就可以了.</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> t,<span class="keyword">int</span> s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(((s+t)&amp;<span class="number">1</span>)||((s-t)&amp;<span class="number">1</span>))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	n=(s+t)/<span class="number">2</span>;</span><br><span class="line">	<span class="comment">//printf("n=%d\n",n);</span></span><br><span class="line">	<span class="keyword">if</span>(n&gt;INF||n&lt;<span class="number">1</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> tmp=(s-t)/<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(n/i&lt;tmp||n/i&lt;<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(n/i==tmp)&#123;</span><br><span class="line">			m=i;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="keyword">int</span> x;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">		<span class="keyword">if</span>(x==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"1 1\n"</span>);</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">bool</span> tag=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i*i&lt;=x;++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(x%i==<span class="number">0</span>&amp;&amp;judge(i,x/i))&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,n,m);</span><br><span class="line">				tag=<span class="literal">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!tag)<span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-    <!-- Tag Cloud Page -->
-    <hr>
-<br>
-
-
-<p class="count"></p>
-
-<div class="tags">
-    <a href="/tags/CF-CDE/" style="font-size: 35px; color: #000">CF CDE</a> <a href="/tags/topo排序/" style="font-size: 16px; color: #808080">topo排序</a> <a href="/tags/思维/" style="font-size: 16px; color: #808080">思维</a> <a href="/tags/数学/" style="font-size: 16px; color: #808080">数学</a> <a href="/tags/贪心/" style="font-size: 35px; color: #000">贪心</a>
-</div>
-<style>
-    .category-list li{
-        display: inline-block;
-        margin: 0 1em .5em 0;
-        padding: 4px;
-        border: 1px solid lightgray;
-        font-size: 1.2rem;
-    }
-    .category-list a { color: gray; }
-    .category-list-item:hover a {
-        color: gray;
-        text-decoration: none;
-    }
-    .category-list-count {
-        margin-left: 2px;
-        font-size: .9rem;
-    }
-    .article-entry ul li:before{ display: none; }
-    .article-inner { text-align: center; }
-    .tags {
-        max-width: 42em;
-        margin: 2em auto;
-        margin-top: 0em;
-    }
-    .tags a {
-        margin-right: 1em;
-        line-height: 65px;
-        border-bottom: 1px solid gray;
-        white-space: nowrap;
-        transition: border-bottom .5s;
-    }
-    .tags a:hover {
-        border-bottom: 3px dotted gray;
-        text-decoration: none;
-    }
-    #count > span {
-        margin: auto .2em;
-        font-weight: bold;
-    }
-</style>
-
-<!-- Count tags and categories -->
-<p id="count">
-         <span><script>document.write($(".category-list-item").length)</script></span>Categories,
-         <span><script>document.write($(".tags > a").length)</script></span>Tags
-</p>
-<script>
-    $('#count').appendTo('.count');
-</script>
-
-          
-        
       
     </div>
     
   </div>
   
     
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2018/02/21/CF938C/">CF938C</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">NaOH</a></p>
+        <p><span>Created:</span>2018-02-21, 17:57:23</p>
+        <p><span>Updated:</span>2018-02-21, 18:33:03</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2018/02/21/CF938C/" title="CF938C">http://yoursite.com/2018/02/21/CF938C/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/02/21/CF938C/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2018/02/11/CF909E/">
+                    CF909E Coprocessor
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题解"><span class="toc-number">2.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
 
@@ -394,7 +392,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"标签云　| NaOH's　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"CF938C　| NaOH's　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -409,6 +407,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2018/02/11/CF909E/" title="Next: CF909E Coprocessor">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/CF938C/">CF938C</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/CF909E/">CF909E Coprocessor</a></li></ul>
 
 
 
