@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="NaOH&#39;s">
 <meta property="og:description" content="题目Given a string of characters, we can permute the individual characters to make new strings. At first we order the string into alphabetical order. Then we start permuting it. For example the string ‘">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-10T12:37:58.791Z">
+<meta property="og:updated_time" content="2018-03-10T12:39:53.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LightOJ1060 nth Permutaiton 计数的思想">
 <meta name="twitter:description" content="题目Given a string of characters, we can permute the individual characters to make new strings. At first we order the string into alphabetical order. Then we start permuting it. For example the string ‘">
@@ -306,7 +306,7 @@
 <h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>我们有逆康拓展开的思想,就是说,求长度为n的第k的一个排列(n从0开始).</p>
 <p>比如说求长度为4的第5大的排列.</p>
 <ul>
-<li>先考虑第一个数,如果为1,那么能确定这个排列一定比 $0<em>3!=0​$个数大,如果为2的话,那么可以确定,这个排列一定比$1</em>3!=6​$个数大所以<strong>第一位应该填1,然后求剩余3位数中第5大的排列</strong>.</li>
+<li>先考虑第一个数,如果为1,那么能确定这个排列一定比 $0X3!=0$个数大,如果为2的话,那么可以确定,这个排列一定比$1X3!=6$个数大所以<strong>第一位应该填1,然后求剩余3位数中第5大的排列</strong>.</li>
 <li>考虑第二个数,按照上面分析,那么这<strong>该位应该为4,然后求剩余2位数中排第1大的数</strong></li>
 <li>那么最后的排列应该为:1432</li>
 </ul>
@@ -324,7 +324,7 @@
         <p><span>Title:</span><a href="/2018/03/10/LightOJ1060-nth-Permutaiton-计数的思想/">LightOJ1060 nth Permutaiton 计数的思想</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">NaOH</a></p>
         <p><span>Created:</span>2018-03-10, 20:06:47</p>
-        <p><span>Updated:</span>2018-03-10, 20:37:58</p>
+        <p><span>Updated:</span>2018-03-10, 20:39:53</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2018/03/10/LightOJ1060-nth-Permutaiton-计数的思想/" title="LightOJ1060 nth Permutaiton 计数的思想">http://yoursite.com/2018/03/10/LightOJ1060-nth-Permutaiton-计数的思想/</a>
             <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/03/10/LightOJ1060-nth-Permutaiton-计数的思想/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
