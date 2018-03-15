@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-11T16:43:44.072Z</updated>
+  <updated>2018-03-15T16:24:00.811Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>soj4554 Boring Game HASH</title>
+    <link href="http://yoursite.com/2018/03/16/soj4554-Boring-Game-HASH/"/>
+    <id>http://yoursite.com/2018/03/16/soj4554-Boring-Game-HASH/</id>
+    <published>2018-03-15T16:02:07.000Z</published>
+    <updated>2018-03-15T16:24:00.811Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给你一个N*M的矩阵,($a_{ij} \leq NM$)接下来有$1e5$次询问,$x_1,y_1,x_2,y_2$分别为子矩阵左上右下的点,问这个子矩阵中是否$1到size(子矩阵)$这些数都在这个矩阵中出现一次.</p><h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>我们可以采用hash的方法.</p><p>首先hash要满足可计算.</p><p>我们如果知道子矩阵的size,那么这个子矩阵中 所有数的和,所有数的平方的和,所有数立方的和等等信息,都可以知道了.那么我们需要先预处理一下原来矩阵中的信息.</p><p>记$sum[k][i][j]$为[1,i]*[1,j]矩阵中,每个数的k次方的和.那么有</p><p>预处理:</p><ul><li>$sum[k][i][j]=sum[k][i-1][j]+sum[k][i][j-1]-sum[k][i-1][j-1]+a[k][i][j]$</li></ul><p>询问: </p><ul><li>$sum[k][x_1..x_2][y_1..y_2]=sum[k][x_2][y_2]+sum[k][x_1-1][y_1-1]-sum[x_1-1][y_1]-sum[x_2][y_1-1]$</li></ul><p>这个题开始我hash了5次,但其实只要hash一次,hash一个数的三次方就行了.</p><h4 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> uint;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1010</span>;</span><br><span class="line">uint f[maxn][maxn], g[maxn * maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(uint i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; i++)</span><br><span class="line">        g[i] = g[i<span class="number">-1</span>] + i * i * i;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m) == <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%u"</span>, &amp;f[i][j]);</span><br><span class="line">                f[i][j] = f[i][j] * f[i][j] * f[i][j] + f[i<span class="number">-1</span>][j] + f[i][j<span class="number">-1</span>] - f[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">int</span> q; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;q);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; q; k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x1, y1, x2, y2;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;x1, &amp;y1, &amp;x2, &amp;y2);</span><br><span class="line">            uint val = f[x2][y2] - f[x1<span class="number">-1</span>][y2] - f[x2][y1<span class="number">-1</span>] + f[x1<span class="number">-1</span>][y1<span class="number">-1</span>];</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, val == g[(x2-x1+<span class="number">1</span>)*(y2-y1+<span class="number">1</span>)] ? <span class="string">"YES"</span> : <span class="string">"NO"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目&quot;&gt;&lt;/a&gt;题目&lt;/h4&gt;&lt;p&gt;给你一个N*M的矩阵,($a_{ij} \leq NM$)接下来有$1e5$次询问,$x_1,y_1,x_2,y_2$分别为子矩阵左上右下的
+      
+    
+    </summary>
+    
+    
+      <category term="hash" scheme="http://yoursite.com/tags/hash/"/>
+    
+  </entry>
   
   <entry>
     <title>CF949A Zebras 瞎搞+set维护</title>
@@ -269,9 +292,9 @@
     
       <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
-    
       <category term="topo排序" scheme="http://yoursite.com/tags/topo%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     
   </entry>
   

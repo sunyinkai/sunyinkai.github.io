@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="题意有n个任务,每个任务有相同的k个子任务,你可以按任何顺序完成子任务,每完成一个得1分,但如果你把一个任务的所有子任务都完成了,就可以额外的得到一分.每个子任务所需要的时间$ t_i \leq 10^6$, 你有M的时间,求你最多能得多少分. $n \leq 45,k \leq 45, M \leq 2*10^9 $ 分析问题的难点在于究竟要不要完成一个完整的任务. 比如说这样一组数据. 122">
-<meta name="keywords" content="数学,思维">
+<meta name="description" content="题目给你一个N*M的矩阵,($a_{ij} \leq NM$)接下来有$1e5$次询问,$x_1,y_1,x_2,y_2$分别为子矩阵左上右下的点,问这个子矩阵中是否$1到size(子矩阵)$这些数都在这个矩阵中出现一次. 题解我们可以采用hash的方法. 首先hash要满足可计算. 我们如果知道子矩阵的size,那么这个子矩阵中 所有数的和,所有数的平方的和,所有数立方的和等等信息,都可以知道了">
+<meta name="keywords" content="hash">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF846B 思维">
-<meta property="og:url" content="http://yoursite.com/2018/03/01/CF846B-思维/index.html">
+<meta property="og:title" content="soj4554 Boring Game HASH">
+<meta property="og:url" content="http://yoursite.com/2018/03/16/soj4554-Boring-Game-HASH/index.html">
 <meta property="og:site_name" content="NaOH&#39;s">
-<meta property="og:description" content="题意有n个任务,每个任务有相同的k个子任务,你可以按任何顺序完成子任务,每完成一个得1分,但如果你把一个任务的所有子任务都完成了,就可以额外的得到一分.每个子任务所需要的时间$ t_i \leq 10^6$, 你有M的时间,求你最多能得多少分. $n \leq 45,k \leq 45, M \leq 2*10^9 $ 分析问题的难点在于究竟要不要完成一个完整的任务. 比如说这样一组数据. 122">
+<meta property="og:description" content="题目给你一个N*M的矩阵,($a_{ij} \leq NM$)接下来有$1e5$次询问,$x_1,y_1,x_2,y_2$分别为子矩阵左上右下的点,问这个子矩阵中是否$1到size(子矩阵)$这些数都在这个矩阵中出现一次. 题解我们可以采用hash的方法. 首先hash要满足可计算. 我们如果知道子矩阵的size,那么这个子矩阵中 所有数的和,所有数的平方的和,所有数立方的和等等信息,都可以知道了">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-03T06:15:43.831Z">
+<meta property="og:updated_time" content="2018-03-15T16:24:00.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CF846B 思维">
-<meta name="twitter:description" content="题意有n个任务,每个任务有相同的k个子任务,你可以按任何顺序完成子任务,每完成一个得1分,但如果你把一个任务的所有子任务都完成了,就可以额外的得到一分.每个子任务所需要的时间$ t_i \leq 10^6$, 你有M的时间,求你最多能得多少分. $n \leq 45,k \leq 45, M \leq 2*10^9 $ 分析问题的难点在于究竟要不要完成一个完整的任务. 比如说这样一组数据. 122">
+<meta name="twitter:title" content="soj4554 Boring Game HASH">
+<meta name="twitter:description" content="题目给你一个N*M的矩阵,($a_{ij} \leq NM$)接下来有$1e5$次询问,$x_1,y_1,x_2,y_2$分别为子矩阵左上右下的点,问这个子矩阵中是否$1到size(子矩阵)$这些数都在这个矩阵中出现一次. 题解我们可以采用hash的方法. 首先hash要满足可计算. 我们如果知道子矩阵的size,那么这个子矩阵中 所有数的和,所有数的平方的和,所有数立方的和等等信息,都可以知道了">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>CF846B 思维 | NaOH&#39;s</title>
+<title>soj4554 Boring Game HASH | NaOH&#39;s</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -252,11 +252,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-CF846B-思维" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-soj4554-Boring-Game-HASH" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/03/01/CF846B-思维/" class="article-date">
-      <time datetime="2018-03-01T03:55:28.000Z" itemprop="datePublished">2018-03-01</time>
+      <a href="/2018/03/16/soj4554-Boring-Game-HASH/" class="article-date">
+      <time datetime="2018-03-15T16:02:07.000Z" itemprop="datePublished">2018-03-16</time>
 </a>
 
 
@@ -271,7 +271,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CF846B 思维
+      soj4554 Boring Game HASH
     </h1>
   
 
@@ -282,7 +282,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思维/">思维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hash/">hash</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -292,15 +292,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><p>有n个任务,每个任务有相同的k个子任务,你可以按任何顺序完成子任务,每完成一个得1分,但如果你把一个任务的所有子任务都完成了,就可以额外的得到一分.每个子任务所需要的时间$ t_i \leq 10^6$, 你有M的时间,求你最多能得多少分.</p>
-<p>$n \leq 45,k \leq 45, M \leq 2*10^9 $</p>
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>问题的难点在于究竟要不要完成一个完整的任务.</p>
-<p>比如说这样一组数据.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2 4 17</span><br><span class="line">1 2 4 7</span><br></pre></td></tr></table></figure>
-<p>如果我们选择完成一个完整的任务,可以获得7分,否则可以获得6分.</p>
-<p><strong>难点在完成多少个完整的任务上,那么我们是不是就可以枚举这个东西呢,其他的当做不完成 完整的拿来贪心</strong></p>
-<p>复杂度 $ O(n^2k)$</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">47</span>;</span><br><span class="line"><span class="keyword">int</span> a[MAXN];</span><br><span class="line"><span class="keyword">int</span> t[MAXN][MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,k,M;<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>,&amp;n,&amp;k,&amp;M);</span><br><span class="line">	<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;++i)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]),sum+=a[i];</span><br><span class="line">	sort(a,a+k);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k;++j)</span><br><span class="line">			t[i][j]=a[j];<span class="comment">//n row k col</span></span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> full=<span class="number">0</span>;full&lt;=n;++full)&#123;</span><br><span class="line">		<span class="keyword">int</span> tmp=M;</span><br><span class="line">		<span class="keyword">int</span> res=full*(k+<span class="number">1</span>);</span><br><span class="line">		tmp-=sum*full;<span class="comment">//the remain time</span></span><br><span class="line">		<span class="keyword">if</span>(tmp&lt;<span class="number">0</span>)<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;k<span class="number">-1</span>;++j)&#123;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i=full;i&lt;n;++i)&#123;</span><br><span class="line">				<span class="keyword">if</span>(tmp&gt;=t[i][j])tmp-=t[i][j],res++;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">goto</span> flag;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		flag:</span><br><span class="line">		<span class="keyword">if</span>(res&gt;ans)&#123;</span><br><span class="line">			ans=res;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给你一个N*M的矩阵,($a_{ij} \leq NM$)接下来有$1e5$次询问,$x_1,y_1,x_2,y_2$分别为子矩阵左上右下的点,问这个子矩阵中是否$1到size(子矩阵)$这些数都在这个矩阵中出现一次.</p>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>我们可以采用hash的方法.</p>
+<p>首先hash要满足可计算.</p>
+<p>我们如果知道子矩阵的size,那么这个子矩阵中 所有数的和,所有数的平方的和,所有数立方的和等等信息,都可以知道了.那么我们需要先预处理一下原来矩阵中的信息.</p>
+<p>记$sum[k][i][j]$为[1,i]*[1,j]矩阵中,每个数的k次方的和.那么有</p>
+<p>预处理:</p>
+<ul>
+<li>$sum[k][i][j]=sum[k][i-1][j]+sum[k][i][j-1]-sum[k][i-1][j-1]+a[k][i][j]$</li>
+</ul>
+<p>询问: </p>
+<ul>
+<li>$sum[k][x_1..x_2][y_1..y_2]=sum[k][x_2][y_2]+sum[k][x_1-1][y_1-1]-sum[x_1-1][y_1]-sum[x_2][y_1-1]$</li>
+</ul>
+<p>这个题开始我hash了5次,但其实只要hash一次,hash一个数的三次方就行了.</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">int</span> uint;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1010</span>;</span><br><span class="line">uint f[maxn][maxn], g[maxn * maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(uint i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; i++)</span><br><span class="line">        g[i] = g[i<span class="number">-1</span>] + i * i * i;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m) == <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; j++)&#123;</span><br><span class="line">                <span class="built_in">scanf</span>(<span class="string">"%u"</span>, &amp;f[i][j]);</span><br><span class="line">                f[i][j] = f[i][j] * f[i][j] * f[i][j] + f[i<span class="number">-1</span>][j] + f[i][j<span class="number">-1</span>] - f[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">int</span> q; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;q);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; q; k++)&#123;</span><br><span class="line">            <span class="keyword">int</span> x1, y1, x2, y2;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;x1, &amp;y1, &amp;x2, &amp;y2);</span><br><span class="line">            uint val = f[x2][y2] - f[x1<span class="number">-1</span>][y2] - f[x2][y1<span class="number">-1</span>] + f[x1<span class="number">-1</span>][y1<span class="number">-1</span>];</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, val == g[(x2-x1+<span class="number">1</span>)*(y2-y1+<span class="number">1</span>)] ? <span class="string">"YES"</span> : <span class="string">"NO"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -309,13 +315,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2018/03/01/CF846B-思维/">CF846B 思维</a></p>
+        <p><span>Title:</span><a href="/2018/03/16/soj4554-Boring-Game-HASH/">soj4554 Boring Game HASH</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">NaOH</a></p>
-        <p><span>Created:</span>2018-03-01, 11:55:28</p>
-        <p><span>Updated:</span>2018-03-03, 14:15:43</p>
+        <p><span>Created:</span>2018-03-16, 00:02:07</p>
+        <p><span>Updated:</span>2018-03-16, 00:24:00</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2018/03/01/CF846B-思维/" title="CF846B 思维">http://yoursite.com/2018/03/01/CF846B-思维/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/03/01/CF846B-思维/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2018/03/16/soj4554-Boring-Game-HASH/" title="soj4554 Boring Game HASH">http://yoursite.com/2018/03/16/soj4554-Boring-Game-HASH/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/03/16/soj4554-Boring-Game-HASH/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -327,16 +333,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/03/03/LightOJ1057-Collecting-Gold-旅行商问题/">
-                    LightOJ1057 Collecting Gold 旅行商问题
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/02/28/Race-to-1-Again-期望/">
-                    Race to 1 Again 期望
+                <a href="/2018/03/12/CF949A-Zebras-瞎搞-set维护/">
+                    CF949A Zebras 瞎搞+set维护
                 </a>
             </div>
         
@@ -348,7 +348,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题意"><span class="toc-number">1.</span> <span class="toc-text">题意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题解"><span class="toc-number">2.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码:</span></a></li></ol>
         
     </div>
     <style>
@@ -384,7 +384,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"CF846B 思维　| NaOH's　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"soj4554 Boring Game HASH　| NaOH's　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -404,15 +404,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/03/03/LightOJ1057-Collecting-Gold-旅行商问题/" title="Pre: LightOJ1057 Collecting Gold 旅行商问题">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/02/28/Race-to-1-Again-期望/" title="Next: Race to 1 Again 期望">
+            <a href="/2018/03/12/CF949A-Zebras-瞎搞-set维护/" title="Next: CF949A Zebras 瞎搞+set维护">
                 <i class="fa fa-angle-right"></i>
             </a>
         
