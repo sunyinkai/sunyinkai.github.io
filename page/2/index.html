@@ -186,7 +186,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CF-CDE/">CF CDE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/topo排序/">topo排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分/">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/康托展开/">康托展开</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维/">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅行商问题/">旅行商问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/期望/">期望</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压DP/">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/瞎搞/">瞎搞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计数思想/">计数思想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CF-CDE/">CF CDE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/topo排序/">topo排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分/">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/康托展开/">康托展开</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维/">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅行商问题/">旅行商问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/期望/">期望</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压DP/">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/瞎搞/">瞎搞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散化/">离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计数思想/">计数思想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li></ul>
                     </div>
                 </section>
                 
@@ -256,6 +256,86 @@
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-CF938C" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/02/21/CF938C/" class="article-date">
+      <time datetime="2018-02-21T09:57:23.000Z" itemprop="datePublished">2018-02-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/21/CF938C/">CF938C</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>Let’s denote a <em>m</em>-free matrix as a binary (that is, consisting of only 1’s and 0’s) matrix such that every square submatrix of size <em>m</em> × <em>m</em> of this matrix contains at least one zero.</p>
+<p>Consider the following problem:</p>
+<p>You are given two integers <em>n</em> and <em>m</em>. You have to construct an <em>m</em>-free square matrix of size <em>n</em> × <em>n</em> such that the number of 1’s in this matrix is maximum possible. Print the maximum possible number of 1’s in such matrix.</p>
+<p>You don’t have to solve this problem. Instead, you have to construct a few tests for it.</p>
+<p>You will be given <em>t</em> numbers <em>x</em>1, <em>x</em>2, …, $x_t$. For every <img src="http://codeforces.com/predownloaded/43/f1/43f1e11898ef657b1c1c02e1ae7b954c5230a2d9.png" alt="img">, find two integers <em>n</em> and <em>m</em> (<em>n</em> ≥ <em>m</em>) such that the answer for the aforementioned problem is exactly <em>x</em> .</p>
+<p>Input</p>
+<p>The first line contains one integer <em>t</em> (1 ≤ <em>t</em> ≤ 100) — the number of tests you have to construct.</p>
+<p>Then <em>t</em> lines follow, <em>i</em>-th line containing one integer <em>x</em> (0 ≤ <em>x</em> ≤ $10^9$).</p>
+<p>Output</p>
+<p>For each test you have to construct, output two positive numbers <em>n</em> and <em>m</em> (1 ≤ <em>m</em>≤ <em>n</em> ≤ 10^9) such that the maximum number of 1’s in a <em>m</em>-free <em>n</em> × <em>n</em> matrix is exactly <em>x</em>. If there are multiple solutions, you may output any of them; and if this is impossible to construct a test, output a single integer  - 1.</p>
+<p>Example</p>
+<p>input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">21</span><br><span class="line">0</span><br><span class="line">1</span><br></pre></td></tr></table></figure>
+<p>output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5 2</span><br><span class="line">1 1</span><br><span class="line">-1</span><br></pre></td></tr></table></figure>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>不难发现对于每一个子阵,总是最右下方的那个地方置为0最合适,因为这样的<strong>潜力</strong>最大.</p>
+<p>问题转化为是否存在n,m使得$n^2$-$[n/m]^2$=x.</p>
+<p>既是 $a^2-b^2=C $</p>
+<p>转化一下 $ (a+b)(a-b)=C$</p>
+<p>然后再分解因子搞一搞就可以了.</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">1e9</span>;</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> t,<span class="keyword">int</span> s)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(((s+t)&amp;<span class="number">1</span>)||((s-t)&amp;<span class="number">1</span>))<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	n=(s+t)/<span class="number">2</span>;</span><br><span class="line">	<span class="comment">//printf("n=%d\n",n);</span></span><br><span class="line">	<span class="keyword">if</span>(n&gt;INF||n&lt;<span class="number">1</span>)<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">int</span> tmp=(s-t)/<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)&#123;</span><br><span class="line">		<span class="keyword">if</span>(n/i&lt;tmp||n/i&lt;<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(n/i==tmp)&#123;</span><br><span class="line">			m=i;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		<span class="keyword">int</span> x;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">		<span class="keyword">if</span>(x==<span class="number">0</span>)&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"1 1\n"</span>);</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">bool</span> tag=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i*i&lt;=x;++i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(x%i==<span class="number">0</span>&amp;&amp;judge(i,x/i))&#123;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,n,m);</span><br><span class="line">				tag=<span class="literal">true</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(!tag)<span class="built_in">printf</span>(<span class="string">"-1\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF-CDE/">CF CDE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思维/">思维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贪心/">贪心</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-CF909E" class="article article-type-post" itemscope itemprop="blogPost">
   

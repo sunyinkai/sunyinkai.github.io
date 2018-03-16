@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="题目A. Pride You have an array a with length n, you can perform operations. Each operation is like this: choose two adjacent elements from a, say x and y, and replace one of them with gcd(x, y), where g">
-<meta name="keywords" content="数学,思维,贪心">
+<meta name="description" content="题目给出个加工任务的开始时间和结束时间，问最少要用多少台机器可以完成这些任务，同一台机器上的任务时间不能有重叠，但允许守尾相接。对于每组用例，输出两个整数，分别表示最少用的机器台数和所有机器用的总时间。一台机器的用时为它最后的结束时间减它最开始启动的时间，中间不会停机。 $ T (1 &amp;lt;= T &amp;lt;= 100) , N (0 &amp;lt; N &amp;lt;= 100000,0&amp;lt;=s_i&amp;l">
+<meta name="keywords" content="前缀和,瞎搞,离散化">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CF891A Pride">
-<meta property="og:url" content="http://yoursite.com/2018/02/23/CF891A/index.html">
+<meta property="og:title" content="HDOJ6180 Schedule 前缀和+瞎搞+输入挂">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/index.html">
 <meta property="og:site_name" content="NaOH&#39;s">
-<meta property="og:description" content="题目A. Pride You have an array a with length n, you can perform operations. Each operation is like this: choose two adjacent elements from a, say x and y, and replace one of them with gcd(x, y), where g">
+<meta property="og:description" content="题目给出个加工任务的开始时间和结束时间，问最少要用多少台机器可以完成这些任务，同一台机器上的任务时间不能有重叠，但允许守尾相接。对于每组用例，输出两个整数，分别表示最少用的机器台数和所有机器用的总时间。一台机器的用时为它最后的结束时间减它最开始启动的时间，中间不会停机。 $ T (1 &amp;lt;= T &amp;lt;= 100) , N (0 &amp;lt; N &amp;lt;= 100000,0&amp;lt;=s_i&amp;l">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-23T02:25:10.404Z">
+<meta property="og:updated_time" content="2018-03-16T16:30:06.601Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CF891A Pride">
-<meta name="twitter:description" content="题目A. Pride You have an array a with length n, you can perform operations. Each operation is like this: choose two adjacent elements from a, say x and y, and replace one of them with gcd(x, y), where g">
+<meta name="twitter:title" content="HDOJ6180 Schedule 前缀和+瞎搞+输入挂">
+<meta name="twitter:description" content="题目给出个加工任务的开始时间和结束时间，问最少要用多少台机器可以完成这些任务，同一台机器上的任务时间不能有重叠，但允许守尾相接。对于每组用例，输出两个整数，分别表示最少用的机器台数和所有机器用的总时间。一台机器的用时为它最后的结束时间减它最开始启动的时间，中间不会停机。 $ T (1 &amp;lt;= T &amp;lt;= 100) , N (0 &amp;lt; N &amp;lt;= 100000,0&amp;lt;=s_i&amp;l">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>CF891A Pride | NaOH&#39;s</title>
+<title>HDOJ6180 Schedule 前缀和+瞎搞+输入挂 | NaOH&#39;s</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -252,11 +252,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-CF891A" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-HDOJ6180-Schedule-前缀和-瞎搞-输入挂" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/02/23/CF891A/" class="article-date">
-      <time datetime="2018-02-23T02:16:06.000Z" itemprop="datePublished">2018-02-23</time>
+      <a href="/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/" class="article-date">
+      <time datetime="2018-03-16T16:09:56.000Z" itemprop="datePublished">2018-03-17</time>
 </a>
 
 
@@ -271,7 +271,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      CF891A Pride
+      HDOJ6180 Schedule 前缀和+瞎搞+输入挂
     </h1>
   
 
@@ -282,7 +282,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思维/">思维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/贪心/">贪心</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/瞎搞/">瞎搞</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/离散化/">离散化</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -292,33 +292,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>A. Pride</p>
-<p>You have an array <em>a</em> with length <em>n</em>, you can perform operations. Each operation is like this: choose two adjacent elements from <em>a</em>, say <em>x</em> and <em>y</em>, and replace one of them with <em>gcd</em>(<em>x</em>, <em>y</em>), where <em>gcd</em> denotes the <a href="https://en.wikipedia.org/wiki/Greatest_common_divisor" target="_blank" rel="noopener">greatest common divisor</a>.</p>
-<p>What is the minimum number of operations you need to make all of the elements equal to 1?</p>
-<p>Input</p>
-<p>The first line of the input contains one integer <em>n</em> (1 ≤ <em>n</em> ≤ 2000) — the number of elements in the array.</p>
-<p>The second line contains <em>n</em> space separated integers <em>a</em>1, <em>a</em>2, …, <em>an</em> (1 ≤ <em>ai</em> ≤ 109) — the elements of the array.</p>
-<p>Output</p>
-<p>Print -1, if it is impossible to turn all numbers to 1. Otherwise, print the minimum number of operations needed to make all numbers equal to 1.</p>
-<p>Examples</p>
-<p>Copy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">2 2 3 4 6</span><br></pre></td></tr></table></figure>
-<p>output</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">5</span><br></pre></td></tr></table></figure>
-<p>Copy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">2 4 6 8</span><br></pre></td></tr></table></figure>
-<p>output</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
-<p>Copy</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">2 6 9</span><br></pre></td></tr></table></figure>
-<p>output</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
-<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><ul>
-<li>如果有x个1,那么显然答案为n-x</li>
-<li>如果没有1,考虑最少需要多少操作弄出一个1来,考虑到gcd(x,y)赋值给y更好,因为gcd(x,y)已经少了一些因子,然后问题就转化为求最短的区间使得gcd(L,R)为1.<strong>gcd(L,R+1)=gcd(gcd(L,R),a[R+1]))</strong>可以O(n^2)求出所有区间的gcd值.</li>
-<li>另外这种枚举的方式我觉得挺妙的</li>
-</ul>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> min(a,b) (a&lt;b?a:b)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">2007</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">int</span> a[MAXN][MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> b?gcd(b,a%b):a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">int</span> cnt1=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][i]);</span><br><span class="line">		<span class="keyword">if</span>(a[i][i]==<span class="number">1</span>)++cnt1;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(cnt1!=<span class="number">0</span>)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,n-cnt1);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;n;++j)&#123;</span><br><span class="line">			a[i][j]=gcd(a[i][j<span class="number">-1</span>],a[j][j]);</span><br><span class="line">			<span class="keyword">if</span>(a[i][j]==<span class="number">1</span>)ans=min(ans,j-i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans==INF)<span class="built_in">printf</span>(<span class="string">"-1"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,n<span class="number">-1</span>+ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给出个加工任务的开始时间和结束时间，问最少要用多少台机器可以完成这些任务，同一台机器上的任务时间不能有重叠，但允许守尾相接。对于每组用例，输出两个整数，分别表示最少用的机器台数和所有机器用的总时间。一台机器的用时为它最后的结束时间减它最开始启动的时间，中间不会停机。</p>
+<p>$ T (1 &lt;= T &lt;= 100) , N (0 &lt; N &lt;= 100000,0&lt;=s_i&lt;e_i&lt;=1e9)$</p>
+<p>Sample Input</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">3</span><br><span class="line">1 3//记住是左闭右开</span><br><span class="line">4 6</span><br><span class="line">2 5</span><br></pre></td></tr></table></figure>
+<p>Sample Output</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 8</span><br></pre></td></tr></table></figure>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>这个题第一问是很简单,就是最大重叠数,用前缀和就可以解决了.对于第二个问,我们只需要考虑在哪些地方一定需要增加一台机器,把这个时间记录下来,一共记为$\sum first_i$,同理从后往前,可以算出$\sum last_i$,两个相减就可以了.</p>
+<p>然后这个题的$s_i,t_i$都很大,所有我们需要离散化一下,采用 <strong>sort+unique+unordered_map</strong>的方法</p>
+<p>最后但也是最重要的,数据规模很大,需要采用<strong>读入挂</strong>,T到怀疑人生,以后注意,<strong>如果超过1e6个数就采用读入挂</strong></p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">5e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> BUF_SIZE=<span class="number">409600</span>;</span><br><span class="line"><span class="keyword">int</span> sum[MAXN];</span><br><span class="line"><span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;mp;</span><br><span class="line"><span class="keyword">int</span> l[MAXN],r[MAXN],a[MAXN];</span><br><span class="line"><span class="keyword">int</span> fp[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> cur, eof;</span><br><span class="line">    <span class="keyword">char</span> buf[BUF_SIZE];</span><br><span class="line">    <span class="function"><span class="keyword">char</span> <span class="title">next_char</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (cur == BUF_SIZE) &#123;</span><br><span class="line">            <span class="keyword">if</span> (eof) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">int</span> bytes = fread(buf, <span class="number">1</span>, BUF_SIZE, <span class="built_in">stdin</span>);</span><br><span class="line">            <span class="keyword">if</span> (bytes &lt; BUF_SIZE) &#123;</span><br><span class="line">                <span class="built_in">memset</span>(buf + bytes, <span class="number">-1</span>, BUF_SIZE - bytes);</span><br><span class="line">                buf[bytes] = <span class="number">-1</span>;</span><br><span class="line">                eof = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cur = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> buf[cur++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">next_int</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">char</span> ch = next_char();</span><br><span class="line">        <span class="keyword">while</span> (ch &lt; <span class="string">'0'</span> || ch &gt; <span class="string">'9'</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ch == <span class="number">-1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            ch = next_char();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>) &#123;</span><br><span class="line">            x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>;</span><br><span class="line">            ch = next_char();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; IO = &#123;BUF_SIZE,&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T=IO.next_int();</span><br><span class="line">	<span class="keyword">while</span>(T--)&#123;</span><br><span class="line">		mp.clear();</span><br><span class="line">		<span class="built_in">memset</span>(sum,<span class="number">0</span>,<span class="keyword">sizeof</span>(sum));</span><br><span class="line">		<span class="built_in">memset</span>(fp,<span class="number">0</span>,<span class="keyword">sizeof</span>(fp));</span><br><span class="line">		<span class="keyword">int</span> N=IO.next_int();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;++i)&#123;</span><br><span class="line">			l[i]=IO.next_int();</span><br><span class="line">			r[i]=IO.next_int();</span><br><span class="line">			--r[i];</span><br><span class="line">			a[i]=l[i];a[N+i]=r[i];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		sort(a,a+<span class="number">2</span>*N);<span class="comment">//离散化</span></span><br><span class="line">		<span class="keyword">int</span> cnt=unique(a,a+<span class="number">2</span>*N)-a;</span><br><span class="line">		<span class="keyword">int</span> tot=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;cnt;++i)&#123;</span><br><span class="line">			mp[a[i]]=tot;</span><br><span class="line">			fp[tot]=a[i];</span><br><span class="line">			++tot;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;N;++i)&#123;</span><br><span class="line">			<span class="keyword">int</span> x=l[i],y=r[i];</span><br><span class="line">			++sum[mp[l[i]]];--sum[mp[r[i]]+<span class="number">1</span>];</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">long</span> <span class="keyword">long</span> first=<span class="number">0</span>,last=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=tot;++i)&#123;</span><br><span class="line">			sum[i]+=sum[i<span class="number">-1</span>];</span><br><span class="line">			<span class="keyword">if</span>(sum[i]&gt;ans)&#123;</span><br><span class="line">				first+=fp[i]*(sum[i]-ans);</span><br><span class="line">				ans=sum[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d "</span>,ans);</span><br><span class="line">		ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=tot;i&gt;=<span class="number">0</span>;--i)&#123;</span><br><span class="line">			<span class="keyword">if</span>(sum[i]&gt;ans)&#123;</span><br><span class="line">				last+=(fp[i]+<span class="number">1</span>)*(sum[i]-ans);<span class="comment">//sum[i]-ans为突变的个数</span></span><br><span class="line">				ans=sum[i];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,last-first);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -327,13 +310,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2018/02/23/CF891A/">CF891A Pride</a></p>
+        <p><span>Title:</span><a href="/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/">HDOJ6180 Schedule 前缀和+瞎搞+输入挂</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">NaOH</a></p>
-        <p><span>Created:</span>2018-02-23, 10:16:06</p>
-        <p><span>Updated:</span>2018-02-23, 10:25:10</p>
+        <p><span>Created:</span>2018-03-17, 00:09:56</p>
+        <p><span>Updated:</span>2018-03-17, 00:30:06</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2018/02/23/CF891A/" title="CF891A Pride">http://yoursite.com/2018/02/23/CF891A/</a>
-            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/02/23/CF891A/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/" title="HDOJ6180 Schedule 前缀和+瞎搞+输入挂">http://yoursite.com/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/</a>
+            <span class="copy-path" data-clipboard-text="From http://yoursite.com/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/　　By NaOH" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -345,16 +328,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2018/02/27/CF938D_多源最短路/">
-                    CF938D 多源最短路
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/02/21/CF938C/">
-                    CF938C
+                <a href="/2018/03/16/soj4554-Boring-Game-HASH/">
+                    soj4554 Boring Game HASH
                 </a>
             </div>
         
@@ -366,7 +343,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#题解"><span class="toc-number">2.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目"><span class="toc-number">1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#分析"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol>
         
     </div>
     <style>
@@ -402,7 +379,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"CF891A Pride　| NaOH's　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"HDOJ6180 Schedule 前缀和+瞎搞+输入挂　| NaOH's　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -422,15 +399,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2018/02/27/CF938D_多源最短路/" title="Pre: CF938D 多源最短路">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/02/21/CF938C/" title="Next: CF938C">
+            <a href="/2018/03/16/soj4554-Boring-Game-HASH/" title="Next: soj4554 Boring Game HASH">
                 <i class="fa fa-angle-right"></i>
             </a>
         
