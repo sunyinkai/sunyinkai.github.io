@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-22T16:35:45.181Z</updated>
+  <updated>2018-03-22T17:10:45.297Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2018/03/23/%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%93%E9%A2%98/"/>
     <id>http://yoursite.com/2018/03/23/连通分量专题/</id>
     <published>2018-03-22T16:21:02.000Z</published>
-    <updated>2018-03-22T16:35:45.181Z</updated>
+    <updated>2018-03-22T17:10:45.297Z</updated>
     
-    <content type="html"><![CDATA[<p>在连通分量这一节中,主要包括:</p><p><strong>无向图的割点和点双连通分量,桥和边双连通分量,有向图的强连通分量</strong></p><p>其中,主要利用到的是两个数组:</p><p>low[u]:u以及他的后代所能回到的最小的dfn值.</p><p> dfn[u]:u点的访问时间.</p><h5 id="无向图的割点和点双连通分量"><a href="#无向图的割点和点双连通分量" class="headerlink" title="无向图的割点和点双连通分量"></a>无向图的割点和点双连通分量</h5><p>割点定义: 如果删除一个点后,连通块数量增加,改点为割点.</p><p>判定条件: 如果一个点为割点,需要满足low[u]$\geq$dfn[v],而如果u为根节点需要满足他的儿子需要$child\geq$2.</p><p>代码: <a href="../link/割点.cpp">割点</a></p>]]></content>
+    <content type="html"><![CDATA[<p>在连通分量这一节中,主要包括:</p><p><strong>无向图的割点和点双连通分量,桥和边双连通分量,有向图的强连通分量</strong></p><p>其中,主要利用到的是两个数组:</p><p>low[u]:u以及他的后代所能回到的最小的dfn值.</p><p> dfn[u]:u点的访问时间.</p><h5 id="无向图的割点和点双连通分量"><a href="#无向图的割点和点双连通分量" class="headerlink" title="无向图的割点和点双连通分量"></a>无向图的割点和点双连通分量</h5><p>割点定义: 如果删除一个点后,连通块数量增加,该点为割点.</p><p>判定条件: 如果一个点为割点,需要满足low[u]$\geq$dfn[v],<strong>而如果u为根节点需要满足他的儿子需要$child\geq$2.</strong></p><p>代码: <a href="../link/割点.cpp">割点</a></p><p>点双连通分量定义: 子图中任意两个点之间至少存在两条”<strong>点不重复</strong>“的路径.</p><p>判定条件:没写过</p><p>代码:没写过</p><h5 id="无向图的桥和边双连通分量"><a href="#无向图的桥和边双连通分量" class="headerlink" title="无向图的桥和边双连通分量"></a>无向图的桥和边双连通分量</h5><p>桥的定义: 如果删除一条边后,连通块数量增加,该边为割边.</p><p>判定条件: v的后代只能连回v自己,既 $low[v]&gt;dfn[u]$. <strong>桥特别要注意重边,为了去重边,我们传边的编号.</strong></p><p>代码: <a href="../link/桥.cpp">桥</a></p><p>边双连通分量定义: 子图中任意两点之间至少存在两条”<strong>边不重复</strong>“的路径.</p><p>求解方法: 一个图中,把所有的桥去掉,每个连通分量对应着原图中的一个边双连通分量.</p><p>代码: <a href="../link/加最少边让图双连通.cpp">加最少的边,让整个图变成边双连通</a></p><p><strong>hint</strong></p><ul><li><strong>边双连通分量常伴随着缩点,然后得到一树,树上每个节点都是一个边双连通分量,树上的每条边都是桥.</strong></li></ul><h5 id="有向图的强连通分量"><a href="#有向图的强连通分量" class="headerlink" title="有向图的强连通分量"></a>有向图的强连通分量</h5><p>强连通分量的定义: 一个强连通分量内,任意两个点之间互相可达.</p><p>判定条件:  如果$low[u]==dfn[u]$,那么u点为该强连通分量的”根”</p><p>代码: <a href="../link/加最少边让有向图强连通.cpp">加最少的边让有向图强连通</a>  <strong>注意特判连通分量为1的情况</strong></p><p><strong>hint</strong></p><ul><li><strong>对于一个有向图,我们都可以考虑一下缩点,因为缩点后是一棵有向树,对有向树操作,我们就可以很方便的求DAG上的最长路等等,树具有非常优美的性质,无向图也是同理.</strong></li></ul>]]></content>
     
     <summary type="html">
     
@@ -62,11 +62,11 @@
     </summary>
     
     
+      <category term="前缀和" scheme="http://yoursite.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
+    
       <category term="瞎搞" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%90%9E/"/>
     
       <category term="离散化" scheme="http://yoursite.com/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
-    
-      <category term="前缀和" scheme="http://yoursite.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
@@ -288,11 +288,11 @@
     </summary>
     
     
-      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="数学" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
     
   </entry>
   
@@ -315,13 +315,13 @@
     </summary>
     
     
-      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
-    
-      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
-    
       <category term="数学" scheme="http://yoursite.com/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     
   </entry>
   
@@ -344,9 +344,9 @@
     </summary>
     
     
-      <category term="topo排序" scheme="http://yoursite.com/tags/topo%E6%8E%92%E5%BA%8F/"/>
-    
       <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="topo排序" scheme="http://yoursite.com/tags/topo%E6%8E%92%E5%BA%8F/"/>
     
       <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     

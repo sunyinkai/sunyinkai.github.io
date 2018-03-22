@@ -15,7 +15,7 @@ void dfs(int u,int pre){
 			}
 		}else low[u]=min(low[u],dfn[v]);
 	}
-	if(pre==-1&&child==1){
+	if(pre==-1&&child==1){//如果只有一个孩子,那么根节点不是割点
 		--cutCnt;
 		iscut[u]=0;
 	}
