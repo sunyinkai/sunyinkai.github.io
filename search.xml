@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title><![CDATA[计算所有01串的逆序对的个数]]></title>
+      <url>/2018/03/27/%E8%AE%A1%E7%AE%97%E6%89%80%E6%9C%8901%E4%B8%B2%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9%E7%9A%84%E4%B8%AA%E6%95%B0/</url>
+      <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.nowcoder.com/acm/contest/37/C" target="_blank" rel="noopener">https://www.nowcoder.com/acm/contest/37/C</a><br>来源：牛客网</p>
+<p>求所有长度为n的01串中满足如下条件的二元组个数：<br> 设第i位和第j位分别位ai和aj（i&lt;j），则ai=1,aj=0。<br> 答案对1e9+7取模。其中n&lt;=1e18.</p>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>想要穷举完所有的串显然是不可能的,而又需要计数,我们可以考虑每对01逆序对的贡献值.</p>
+<p>假设我们已经选定某两个位置,一个为0,一个为1,那么还剩下n-2个位置,共有$2^{n-2}$种字符串,</p>
+<p>那么这对逆序对的贡献值为$2^{n-2}$</p>
+<p>那么一共$C(n,2)*2^{n-2}$对逆序对.</p>
+<p>另外</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n%=mod;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,n*(n<span class="number">-1</span>)%mod*inv(<span class="number">2</span>,mod)%mod*fast_pow(<span class="number">2</span>,n<span class="number">-2</span>)%mod);</span><br></pre></td></tr></table></figure>
+<p><strong>这个写法在fast_pow那会有问题</strong></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> 思维 </tag>
+            
+            <tag> 计算贡献 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[连通分量专题]]></title>
       <url>/2018/03/23/%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F%E4%B8%93%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>在连通分量这一节中,主要包括:</p>
@@ -409,9 +434,9 @@
         
         <tags>
             
-            <tag> 贪心 </tag>
-            
             <tag> topo排序 </tag>
+            
+            <tag> 贪心 </tag>
             
             <tag> CF CDE </tag>
             

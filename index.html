@@ -188,7 +188,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CF-CDE/">CF CDE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/topo排序/">topo排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/专题/">专题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分/">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/康托展开/">康托展开</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维/">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅行商问题/">旅行商问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/期望/">期望</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压DP/">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/瞎搞/">瞎搞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散化/">离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计数思想/">计数思想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CF-CDE/">CF CDE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/STL/">STL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hash/">hash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/topo排序/">topo排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/专题/">专题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分/">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/康托展开/">康托展开</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/思维/">思维</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/旅行商问题/">旅行商问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/期望/">期望</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/状压DP/">状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/瞎搞/">瞎搞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散化/">离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计数思想/">计数思想</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算贡献/">计算贡献</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li></ul>
                     </div>
                 </section>
                 
@@ -260,6 +260,74 @@
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-计算所有01串的逆序对的个数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/03/27/计算所有01串的逆序对的个数/" class="article-date">
+      <time datetime="2018-03-27T08:14:33.000Z" itemprop="datePublished">2018-03-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/27/计算所有01串的逆序对的个数/">计算所有01串的逆序对的个数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>链接：<a href="https://www.nowcoder.com/acm/contest/37/C" target="_blank" rel="noopener">https://www.nowcoder.com/acm/contest/37/C</a><br>来源：牛客网</p>
+<p>求所有长度为n的01串中满足如下条件的二元组个数：<br> 设第i位和第j位分别位ai和aj（i&lt;j），则ai=1,aj=0。<br> 答案对1e9+7取模。其中n&lt;=1e18.</p>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><p>想要穷举完所有的串显然是不可能的,而又需要计数,我们可以考虑每对01逆序对的贡献值.</p>
+<p>假设我们已经选定某两个位置,一个为0,一个为1,那么还剩下n-2个位置,共有$2^{n-2}$种字符串,</p>
+<p>那么这对逆序对的贡献值为$2^{n-2}$</p>
+<p>那么一共$C(n,2)*2^{n-2}$对逆序对.</p>
+<p>另外</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n%=mod;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,n*(n<span class="number">-1</span>)%mod*inv(<span class="number">2</span>,mod)%mod*fast_pow(<span class="number">2</span>,n<span class="number">-2</span>)%mod);</span><br></pre></td></tr></table></figure>
+<p><strong>这个写法在fast_pow那会有问题</strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思维/">思维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算贡献/">计算贡献</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-连通分量专题" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -899,69 +967,6 @@
       
     <div class="article-tag tagcloud">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/期望/">期望</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-CF938D_多源最短路" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/02/27/CF938D_多源最短路/" class="article-date">
-      <time datetime="2018-02-27T13:34:49.000Z" itemprop="datePublished">2018-02-27</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/27/CF938D_多源最短路/">CF938D 多源最短路</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>给你$N$个点, 有点权$a[i]$, 有$M$条边, 每条边有边权$c[i]$, 对于每个$i$ ,$j$ 为任意点,求$min(dist(i,j)*2+a[j])$</p>
-<p>$N,M \leq 2*10^5$</p>
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>题目相当于求每个点到图中的最短路,既多源最短路.可以利用堆优化的dijkstra求得.因为堆顶每次都为到改点的距离最小值,我们每次取出堆顶,然后向相邻点扩展即可.</p>
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;utility&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">long</span> <span class="keyword">long</span>,<span class="keyword">int</span>&gt; P;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN=<span class="number">2e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> INF=<span class="number">1e17</span>;</span><br><span class="line">priority_queue&lt;P,<span class="built_in">vector</span>&lt;P&gt;,greater&lt;P&gt; &gt;q;</span><br><span class="line"><span class="built_in">vector</span>&lt;P&gt;G[MAXN];</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span>  cost[MAXN],d[MAXN];</span><br><span class="line"><span class="keyword">int</span> done[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> N,M;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;M);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;M;++i)&#123;</span><br><span class="line">		<span class="keyword">int</span> a,b;<span class="keyword">long</span> <span class="keyword">long</span> c;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d%I64d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		G[a].push_back(P(<span class="number">2</span>*c,b));</span><br><span class="line">		G[b].push_back(P(<span class="number">2</span>*c,a));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%I64d"</span>,&amp;cost[i]);</span><br><span class="line">		q.push(P(cost[i],i));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)d[i]=INF,done[i]=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">		P p=q.top();q.pop();</span><br><span class="line">		<span class="keyword">int</span> u=p.second;</span><br><span class="line">		<span class="keyword">if</span>(done[u])<span class="keyword">continue</span>;</span><br><span class="line">		done[u]=<span class="number">1</span>;</span><br><span class="line">		d[u]=p.first;</span><br><span class="line">		<span class="keyword">int</span> len=G[u].size();</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;++i)&#123;</span><br><span class="line">			<span class="keyword">int</span> v=G[u][i].second;</span><br><span class="line">			q.push(P(G[u][i].first+d[u],v));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=N;++i)&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%I64d "</span>,d[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CF-CDE/">CF CDE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图论/">图论</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最短路/">最短路</a></li></ul>
     </div>
 
       
