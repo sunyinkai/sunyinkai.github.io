@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-30T15:58:23.242Z</updated>
+  <updated>2018-03-31T16:00:31.670Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络流专题</title>
+    <link href="http://yoursite.com/2018/03/31/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B8%93%E9%A2%98/"/>
+    <id>http://yoursite.com/2018/03/31/网络流专题/</id>
+    <published>2018-03-31T08:54:08.000Z</published>
+    <updated>2018-03-31T16:00:31.670Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h3><p>问题:给你一幅网络图,每条边上有最大流量限制,问从源点s到汇点t的最大流量.</p><ul><li>增广路: 从源点s到汇点t的一条变权都为正的路径.</li><li>反向弧: 用于纠正错误的寻找增广路的一种机制,也就是给一个后悔的机会.其实这个东西,有种偷梁换柱的感觉.</li></ul><p><strong>FF算法</strong></p><p>Ford_Fulkerson算法(FF算法)就是基于这两个做的,不停的利用反向弧寻找增广路,复杂度$O(F\times E)$,F为最大流的流量,因为最坏情况下每次最大流量增加1,每次dfs寻找增广路复杂度为$O(E)$.</p><p><strong>Dinic算法</strong></p><ul><li>层次图: 就是从源点bfs,到节点u,距离为d[u],我们把d[u]叫做u的层次.</li><li>阻塞流:多次增广后,层次图中不存在由s-&gt;t的路径.</li></ul><p>算法由bfs求层次图,dfs求增广路组成.</p><p>引入层次图是<strong>防止盲目搜索,只做一次dfs,就求出这次层次图的所有增广路.</strong></p><p>复杂度为$O(V^2 \times E)$</p><p><a href="../link/dinic.cpp">dinic</a></p><p>参考:</p><p><a href="https://www.cnblogs.com/ZJUT-jiangnan/p/3632525.html" target="_blank" rel="noopener">江南的博客</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;最大流&quot;&gt;&lt;a href=&quot;#最大流&quot; class=&quot;headerlink&quot; title=&quot;最大流&quot;&gt;&lt;/a&gt;最大流&lt;/h3&gt;&lt;p&gt;问题:给你一幅网络图,每条边上有最大流量限制,问从源点s到汇点t的最大流量.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;增广路: 从源点s到汇点t的
+      
+    
+    </summary>
+    
+    
+      <category term="专题" scheme="http://yoursite.com/tags/%E4%B8%93%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>codevs1288 埃及分数问题 迭代加深</title>
@@ -311,11 +336,11 @@
     </summary>
     
     
+      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
+    
       <category term="最短路" scheme="http://yoursite.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
       <category term="图论" scheme="http://yoursite.com/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
-      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     
   </entry>
   
@@ -370,9 +395,9 @@
     
       <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
     
-      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
-    
       <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     
   </entry>
   
@@ -395,11 +420,11 @@
     </summary>
     
     
-      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
-    
       <category term="topo排序" scheme="http://yoursite.com/tags/topo%E6%8E%92%E5%BA%8F/"/>
     
       <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     
   </entry>
   
