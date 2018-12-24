@@ -5,7 +5,8 @@
     <entry>
       <title><![CDATA[usage.md]]></title>
       <url>/2018/12/24/usage/</url>
-      <content type="html"></content>
+      <content type="html"><![CDATA[<p>这是摘要<br><a id="more"></a></p>
+]]></content>
       
         
     </entry>
