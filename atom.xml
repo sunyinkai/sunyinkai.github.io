@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-03-31T16:00:31.670Z</updated>
+  <updated>2018-12-24T14:53:55.322Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>usage</title>
+    <link href="http://yoursite.com/2018/12/24/usage/"/>
+    <id>http://yoursite.com/2018/12/24/usage/</id>
+    <published>2018-12-24T14:52:36.000Z</published>
+    <updated>2018-12-24T14:53:55.322Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="how-to-use-hexo"><a href="#how-to-use-hexo" class="headerlink" title="how to use hexo"></a>how to use hexo</h3><p>new a Blog:hexo new title</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;how-to-use-hexo&quot;&gt;&lt;a href=&quot;#how-to-use-hexo&quot; class=&quot;headerlink&quot; title=&quot;how to use hexo&quot;&gt;&lt;/a&gt;how to use hexo&lt;/h3&gt;&lt;p&gt;new a Blog:hexo ne
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>网络流专题</title>
@@ -113,9 +134,9 @@
     </summary>
     
     
-      <category term="前缀和" scheme="http://yoursite.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
-    
       <category term="瞎搞" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%90%9E/"/>
+    
+      <category term="前缀和" scheme="http://yoursite.com/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
       <category term="离散化" scheme="http://yoursite.com/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/"/>
     
@@ -163,9 +184,9 @@
     </summary>
     
     
-      <category term="瞎搞" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%90%9E/"/>
-    
       <category term="STL" scheme="http://yoursite.com/tags/STL/"/>
+    
+      <category term="瞎搞" scheme="http://yoursite.com/tags/%E7%9E%8E%E6%90%9E/"/>
     
   </entry>
   
@@ -370,9 +391,9 @@
     
       <category term="思维" scheme="http://yoursite.com/tags/%E6%80%9D%E7%BB%B4/"/>
     
-      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
-    
       <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     
   </entry>
   
@@ -395,11 +416,11 @@
     </summary>
     
     
-      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
+      <category term="topo排序" scheme="http://yoursite.com/tags/topo%E6%8E%92%E5%BA%8F/"/>
     
       <category term="贪心" scheme="http://yoursite.com/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="topo排序" scheme="http://yoursite.com/tags/topo%E6%8E%92%E5%BA%8F/"/>
+      <category term="CF CDE" scheme="http://yoursite.com/tags/CF-CDE/"/>
     
   </entry>
   

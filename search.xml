@@ -3,6 +3,15 @@
   
     
     <entry>
+      <title><![CDATA[usage]]></title>
+      <url>/2018/12/24/usage/</url>
+      <content type="html"><![CDATA[<h3 id="how-to-use-hexo"><a href="#how-to-use-hexo" class="headerlink" title="how to use hexo"></a>how to use hexo</h3><p>new a Blog:hexo new title</p>
+]]></content>
+      
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[网络流专题]]></title>
       <url>/2018/03/31/%E7%BD%91%E7%BB%9C%E6%B5%81%E4%B8%93%E9%A2%98/</url>
       <content type="html"><![CDATA[<h3 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h3><p>问题:给你一幅网络图,每条边上有最大流量限制,问从源点s到汇点t的最大流量.</p>
@@ -127,9 +136,9 @@
         
         <tags>
             
-            <tag> 前缀和 </tag>
-            
             <tag> 瞎搞 </tag>
+            
+            <tag> 前缀和 </tag>
             
             <tag> 离散化 </tag>
             
@@ -187,9 +196,9 @@
         
         <tags>
             
-            <tag> 瞎搞 </tag>
-            
             <tag> STL </tag>
+            
+            <tag> 瞎搞 </tag>
             
         </tags>
         
@@ -433,9 +442,9 @@
             
             <tag> 思维 </tag>
             
-            <tag> CF CDE </tag>
-            
             <tag> 贪心 </tag>
+            
+            <tag> CF CDE </tag>
             
         </tags>
         
@@ -474,11 +483,11 @@
         
         <tags>
             
-            <tag> CF CDE </tag>
+            <tag> topo排序 </tag>
             
             <tag> 贪心 </tag>
             
-            <tag> topo排序 </tag>
+            <tag> CF CDE </tag>
             
         </tags>
         
