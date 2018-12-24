@@ -5,7 +5,10 @@
     <entry>
       <title><![CDATA[how to use hexo]]></title>
       <url>/2018/12/24/usage/</url>
-      <content type="html"><![CDATA[<p>hello,hexo</p>
+      <content type="html"><![CDATA[<p>only show digest in the main page:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first:</span><br><span class="line">	&lt;!--more--&gt;</span><br><span class="line">seond:</span><br><span class="line">	add desciption in the filed</span><br></pre></td></tr></table></figure>
+<p>write a blog and post:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">first: hexo new &lt;title&gt;</span><br><span class="line">two: hexo g</span><br><span class="line">three: hexo d </span><br><span class="line">we can merge the two and three, hexo d -g</span><br></pre></td></tr></table></figure>
 ]]></content>
       
         
