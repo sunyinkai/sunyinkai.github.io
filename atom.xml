@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunyinkai.github.io/"/>
-  <updated>2019-03-02T13:05:24.855Z</updated>
+  <updated>2019-03-02T13:10:38.935Z</updated>
   <id>https://sunyinkai.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/"/>
     <id>https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/</id>
     <published>2019-03-02T11:45:05.000Z</published>
-    <updated>2019-03-02T13:05:24.855Z</updated>
+    <updated>2019-03-02T13:10:38.935Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="What’s-MST"><a href="#What’s-MST" class="headerlink" title="What’s MST?"></a>What’s MST?</h4><p>  Today,I want to share an algorithm which called the “the minimum spanning tree”,shortly,”MST”.It’s a graph algorithm,which was used for solve a problem like this,<strong>“give you an undireted weighted graph,you should choose some edges to the connect the graph and make the cost is the cheapest”</strong></p><h4 id="How-to-sovle-it"><a href="#How-to-sovle-it" class="headerlink" title="How to sovle it?"></a>How to sovle it?</h4><p>  Sounds difficult?Let’s try to solve it step by step.</p><p>  First of all,we can deduce that the result of edges which we select can form a tree.why?</p><p>   Concerned that if the results not a tree,we can remove some edges to make it still connect all points with the lower cost.But if we remove too much to make it impossible to form a tree,that will not satisfy the condition. <strong>Hence,the result must be a tree.</strong></p><p>  But how to calculate the tree?There is an algoriyhm called the Kruskal algorithm.</p><p>  Let’s learn the procedure of it first ,then I will prove it’s correct.</p><p>  The procedure of Kruskal:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1, Sort all the edges by the cost from cheap to dear.</span><br><span class="line">2, Scanning the edges one by one,</span><br><span class="line">if the edge can connect two connect-block</span><br><span class="line">add it to the result set;</span><br><span class="line">else(that&apos;s the edge connect the same connect-block)</span><br><span class="line">    skip it;</span><br><span class="line">    check the next edge,and repeat the above judgement.</span><br></pre></td></tr></table></figure><p>Why it’s correct ?</p><p> Let me say one more words,the main idea of the above algorithm is called <strong>“greedy”</strong>,that’s it always take the lowest edge which connect two connected-block.</p><p>  Anyway,let’s take our business.</p><p>  <img src="../Picture/MST.png" alt="pic"></p><p> Consider that we have formed the minimum spanning tree,however,we don’t have the cheapest ,maybe it’s the edge A-C,it doesn’t matter.But if we add the edge “A-C” to the result set,and remove one of the highest cost in A-B,B-C,it still satitify the condition but with a  lower cost!That’s all.</p><h4 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it?"></a>How to code it?</h4><p><a href="https://www.51nod.com/Challenge/Problem.html#!#problemId=1212" target="_blank" rel="noopener">the problem please click here</a></p><p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/MST.cpp" target="_blank" rel="noopener">the code please click here</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="What’s-MST"><a href="#What’s-MST" class="headerlink" title="What’s MST?"></a>What’s MST?</h4><p>  Today,I want to share an algorithm which called the “the minimum spanning tree”,shortly,”MST”.It’s a graph algorithm,which was used for solve a problem like this,<strong>“give you an undireted weighted graph,you should choose some edges to the connect the graph and make the cost is the cheapest”</strong></p><h4 id="How-to-sovle-it"><a href="#How-to-sovle-it" class="headerlink" title="How to sovle it?"></a>How to sovle it?</h4><p>  Sounds difficult?Let’s try to solve it step by step.</p><p>  First of all,we can deduce that the result of edges which we select can form a tree.why?</p><p>   Concerned that if the results not a tree,we can remove some edges to make it still connect all points with the lower cost.But if we remove too much to make it impossible to form a tree,that will not satisfy the condition. <strong>Hence,the result must be a tree.</strong></p><p>  But how to calculate the tree?There is an algoriyhm called the Kruskal algorithm.</p><p>  Let’s learn the procedure of it first ,then I will prove it’s correct.</p><p>  The procedure of Kruskal:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1, Sort all the edges by the cost from cheap to dear.</span><br><span class="line">2, Scanning the edges one by one,</span><br><span class="line">if the edge can connect two connect-block</span><br><span class="line">add it to the result set;</span><br><span class="line">else(that&apos;s the edge connect the same connect-block)</span><br><span class="line">    skip it;</span><br><span class="line">    check the next edge,and repeat the above judgement.</span><br></pre></td></tr></table></figure><p>Why it’s correct ?</p><p> Let me say one more words,the main idea of the above algorithm is called <strong>“greedy”</strong>,that’s it always take the lowest edge which connect two connected-block.</p><p>  Anyway,let’s take our business.</p><p>  <img src="/images/MST.png" alt="pic"></p><p> Consider that we have formed the minimum spanning tree,however,we don’t have the cheapest ,maybe it’s the edge A-C,it doesn’t matter.But if we add the edge “A-C” to the result set,and remove one of the highest cost in A-B,B-C,it still satitify the condition but with a  lower cost!That’s all.</p><h4 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it?"></a>How to code it?</h4><p><a href="https://www.51nod.com/Challenge/Problem.html#!#problemId=1212" target="_blank" rel="noopener">the problem please click here</a></p><p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/MST.cpp" target="_blank" rel="noopener">the code please click here</a></p>]]></content>
     
     <summary type="html">
     
@@ -301,9 +301,9 @@
     </summary>
     
     
-      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -377,11 +377,11 @@
     </summary>
     
     
-      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
       <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -404,11 +404,11 @@
     </summary>
     
     
-      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
       <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
       <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
     
