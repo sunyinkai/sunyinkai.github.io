@@ -3,6 +3,36 @@
   
     
     <entry>
+      <title><![CDATA[the minimum spanning tree]]></title>
+      <url>/2019/03/02/the-minium-spanning-tree/</url>
+      <content type="html"><![CDATA[<h3 id="What’s-MST"><a href="#What’s-MST" class="headerlink" title="What’s MST?"></a>What’s MST?</h3><p>  Today,I want to share an algorithm which called the “the minimum spanning tree”,shortly,”MST”.It’s a graph algorithm,which was used for solve a problem like this,<strong>“give you an undireted weighted graph,you should choose some edges to the connect the graph and make the cost is the cheapest”</strong></p>
+<p>###How to solve it ?</p>
+<p>  Sounds difficult?Let’s try to solve it step by step.</p>
+<p>  First of all,we can deduce that the result of edges which we select can form a tree.why?</p>
+<p>   Concerned that if the results not a tree,we can remove some edges to make it still connect all points with the lower cost.But if we remove too much to make it impossible to form a tree,that will not satisfy the condition. <strong>Hence,the result must be a tree.</strong></p>
+<p>  But how to calculate the tree?There is an algoriyhm called the Kruskal algorithm.</p>
+<p>  Let’s learn the procedure of it first ,then I will prove it’s correct.</p>
+<p>  The procedure of Kruskal:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1, Sort all the edges by the cost from cheap to dear.</span><br><span class="line">2, Scanning the edges one by one,</span><br><span class="line">	if the edge can connect two connect-block</span><br><span class="line">		add it to the result set;</span><br><span class="line">	else(that&apos;s the edge connect the same connect-block)</span><br><span class="line">    	skip it;</span><br><span class="line">    check the next edge,and repeat the above judgement.</span><br></pre></td></tr></table></figure>
+<p>Why it’s correct ?</p>
+<p> Let me say one more words,the main idea of the above algorithm is called <strong>“greedy”</strong>,that’s it always take the lowest edge which connect two connected-block.</p>
+<p>  Anyway,let’s take our business.</p>
+<p>  <img src="../Picture/MST.png" alt="pic"></p>
+<p> Consider that we have formed the minimum spanning tree,however,we don’t have the cheapest ,maybe it’s the edge A-C,it doesn’t matter.But if we add the edge “A-C” to the result set,and remove one of the highest cost in A-B,B-C,it still satitify the condition but with a  lower cost!That’s all.</p>
+<h3 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it?"></a>How to code it?</h3><p><a href="https://www.51nod.com/Challenge/Problem.html#!#problemId=1212" target="_blank" rel="noopener">the problem please click here</a></p>
+<p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/MST.cpp" target="_blank" rel="noopener">the code please click here</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> graph </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[how to use hexo]]></title>
       <url>/2018/12/24/usage/</url>
       <content type="html"><![CDATA[<p>only show digest in the main page:</p>
@@ -199,9 +229,9 @@
         
         <tags>
             
-            <tag> 瞎搞 </tag>
-            
             <tag> STL </tag>
+            
+            <tag> 瞎搞 </tag>
             
         </tags>
         
@@ -313,9 +343,9 @@
         
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 思维 </tag>
+            
+            <tag> 数学 </tag>
             
         </tags>
         
@@ -402,11 +432,11 @@
         
         <tags>
             
-            <tag> 贪心 </tag>
+            <tag> 思维 </tag>
             
             <tag> 数学 </tag>
             
-            <tag> 思维 </tag>
+            <tag> 贪心 </tag>
             
         </tags>
         
@@ -441,11 +471,11 @@
         
         <tags>
             
-            <tag> 贪心 </tag>
+            <tag> 思维 </tag>
             
             <tag> 数学 </tag>
             
-            <tag> 思维 </tag>
+            <tag> 贪心 </tag>
             
             <tag> CF CDE </tag>
             
@@ -488,9 +518,9 @@
             
             <tag> 贪心 </tag>
             
-            <tag> CF CDE </tag>
-            
             <tag> topo排序 </tag>
+            
+            <tag> CF CDE </tag>
             
         </tags>
         
