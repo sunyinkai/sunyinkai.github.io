@@ -11,12 +11,12 @@
 <p>In brute force,we caculate from left to right every time,in the most worst case,we will use O(N) time according to every query.</p>
 <p>But we can slove this problem,in a more elegant ways,</p>
 <p>We can use a prefix sum array ,we can call it  sum,it doesn’t matter,the sum[i] means that </p>
-<p>$ sum[i]=a[1]+a[2]+…+a[i] $,</p>
+<p>$sum[i]=a[1]+a[2]+…+a[i]​$,</p>
 <p>therefore,</p>
 <p>$ a[l]+a[l+1]+…+a[r] == sum[r]-sum[l-1]​$</p>
 <p>In this way , we can answer the above query in O(1) time.</p>
 <h4 id="Another-Problem"><a href="#Another-Problem" class="headerlink" title="Another Problem"></a>Another Problem</h4><p>There is an another problem,</p>
-<p><strong>“At the beginning,the value of array are all zero,give you lots of operations which add a number $x_i$ to segment[$ l_i $,$ r_i ​$], and after that,query the value of a[i] “</strong></p>
+<p><strong>“At the beginning,the value of array are all zero,give you lots of operations which add a number $x_i​$ to segment[$ l_i ​$,$ r_i ​$], and after that,query the value of a[i] “</strong></p>
 <p>It’s obviously that we have a brute way,but as above,we also can be in a elegant mananer to solve this problem by using prefix sum.</p>
 <p>In every operation,plus $x_i$ to segement $[l_i,r_i]$,instead of add $x_i$ to every element in the segment,we can just      add $x<em>i$ to $a</em>{l_i}$,and add $-x<em>i$ to $a</em>{r_i+1}​$,and in the last query,just scanning from left to right,and caculate the prefix sum.</p>
 <p>that’s to say,for every operation,Instead of </p>
@@ -24,21 +24,21 @@
 <p>we can use this</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add(a_l,value)</span><br><span class="line">add(a_&#123;r+<span class="number">1</span>&#125;,-value)</span><br></pre></td></tr></table></figure>
 <p>In query,just scanning from left to right,and caculate prefix sum.</p>
-<p>$ modify:O(1),query:O(N) $</p>
+<p>$ modify:O(1),query:O(N) ​$</p>
 <p>Why this solution is right?</p>
 <p>It uses the idea of difference(差分),consider that:</p>
 <p>the origin array:</p>
-<p>$ a_0,a_1,a_2,…,a<em>l,a</em>{l+1},…a_{r-1},a_r,…,a_n $  $ (a_0=0) $</p>
+<p>$a_0,a_1,a_2,…,a<em>l,a</em>{l+1},…a_{r-1},a_r,…,a_n$  $(a_0=0)$</p>
 <p>add x to segment[l:r],the array will be like:</p>
-<p>$ a_0,a_1,a_2,….a<em>l+x,a</em>{l+1}+x,…a_{r-1}+x,a_r+x,…,a_n​ $</p>
+<p>$a_0,a_1,a_2,….a<em>l+x,a</em>{l+1}+x,…a_{r-1}+x,a_r+x,…,a_n$</p>
 <p>if we use $ a<em>i -a</em>{i-1} $,we can get a new array $ b_i $</p>
 <p>the origin array:</p>
-<p>$ a_1-a_0,a_2-a_1,a_3-a_2,a<em>l-a</em>{l-1},a<em>{l+1}-a</em>{l},…,a<em>{r}-a</em>{r-1},a_{r+1}-a_r,…,a<em>n-a</em>{n-1} ​$</p>
+<p>$a_1-a_0,a_2-a_1,a_3-a_2,a<em>l-a</em>{l-1},a<em>{l+1}-a</em>{l},…,a<em>{r}-a</em>{r-1},a_{r+1}-a_r,…,a<em>n-a</em>{n-1}$</p>
 <p>after operation:</p>
-<p>$ a_1-a_0,a_2-a_1,a_3-a_2,a<em>l-a</em>{l-1}+x,a<em>{l+1}-a</em>{l},…,a<em>{r}-a</em>{r-1},a_{r+1}-a_r-x,…,a<em>n-a</em>{n-1} ​$</p>
+<p>$a_1-a_0,a_2-a_1,a_3-a_2,a<em>l-a</em>{l-1}+x,a<em>{l+1}-a</em>{l},…,a<em>{r}-a</em>{r-1},a_{r+1}-a_r-x,…,a<em>n-a</em>{n-1}$</p>
 <p><strong>we can draw a conclusion,if we add x to segment[l:r] in a,</strong></p>
-<p><strong>we can do it by $ add(a<em>l,x) ,add(a</em>{r+1},-x)​ $ to b instead</strong></p>
-<p><strong>if we want to get the value of $a_t$,just caculate the prefix sum of $b_1+…+b_t$.</strong></p>
+<p><strong>we can do it by $add(a<em>l,x) ,add(a</em>{r+1},-x)$ to b instead</strong></p>
+<p><strong>if we want to get the value of $a_t​$,just caculate the prefix sum of $b_1+…+b_t​$.</strong></p>
 ]]></content>
       
         
@@ -540,9 +540,9 @@
             
             <tag> 数学 </tag>
             
-            <tag> CF CDE </tag>
-            
             <tag> 贪心 </tag>
+            
+            <tag> CF CDE </tag>
             
         </tags>
         
@@ -581,11 +581,11 @@
         
         <tags>
             
-            <tag> CF CDE </tag>
-            
             <tag> 贪心 </tag>
             
             <tag> topo排序 </tag>
+            
+            <tag> CF CDE </tag>
             
         </tags>
         
