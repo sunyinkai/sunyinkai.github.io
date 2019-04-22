@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunyinkai.github.io/"/>
-  <updated>2019-03-02T13:10:38.935Z</updated>
+  <updated>2019-04-22T15:42:33.188Z</updated>
   <id>https://sunyinkai.github.io/</id>
   
   <author>
@@ -17,11 +17,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>prefix sum</title>
+    <link href="https://sunyinkai.github.io/2019/04/22/prefix-sum/"/>
+    <id>https://sunyinkai.github.io/2019/04/22/prefix-sum/</id>
+    <published>2019-04-22T14:48:11.000Z</published>
+    <updated>2019-04-22T15:42:33.188Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="what’-s-prefix-sum"><a href="#what’-s-prefix-sum" class="headerlink" title="what’ s prefix sum?"></a>what’ s prefix sum?</h4><p>Consider the follow situation:</p><p><strong>“Give you lots of query about the sum of segment [l,r],and without modifying”</strong></p><p>how to solve this?</p><p>In brute force,we caculate from left to right every time,in the most worst case,we will use O(N) time according to every query.</p><p>But we can slove this problem,in a more elegant ways,</p><p>We can use a prefix sum array ,we can call it  sum,it doesn’t matter,the sum[i] means that </p><p>$sum[i]=a[1]+a[2]+…+a[i]$,</p><p>therefore,</p><p>$a[l]+a[l+1]+…+a[r] == sum[r]-sum[l-1]​$</p><p>In this way , we can answer the above query in O(1) time.</p><h4 id="Another-Problem"><a href="#Another-Problem" class="headerlink" title="Another Problem"></a>Another Problem</h4><p>There is an another problem,</p><p><strong>“At the beginning,the value of array are all zero,give you lots of operations which add a number $x_i$ to segment[$l_i$,$r_i​$], and after that,query the value of a[i] “</strong></p><p>It’s obviously that we have a brute way,but as above,we also can be in a elegant mananer to solve this problem by using prefix sum.</p><p>In every operation,plus $x_i$ to segement $[l_i,r_i]$,instead of add $x_i$ to every element in the segment,we can just      add $x<em>i$ to $a</em>{l_i}$,and add $-x<em>i$ to $a</em>{r_i+1}​$,and in the last query,just scanning from left to right,and caculate the prefix sum.</p><p>that’s to say,for every operation,Instead of </p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(l,r+<span class="number">1</span>):</span><br><span class="line">add(a_i,value)</span><br></pre></td></tr></table></figure><p>we can use this</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">add(a_l,value)</span><br><span class="line">add(a_&#123;r+<span class="number">1</span>&#125;,-value)</span><br></pre></td></tr></table></figure><p>In query,just scanning from left to right,and caculate prefix sum.</p><p>$modify:O(1),query:O(N)$</p><p>Why this solution is right?</p><p>It uses the idea of difference(差分),consider that:</p><p>the origin array:</p><p>$a_0,a_1,a_2,…,a<em>l,a</em>{l+1},…a_{r-1},a_r,…,a_n​$ $(a_0=0)​$</p><p>add x to segment[l:r],the array will be like:</p><p>$a_0,a_1,a_2,….a<em>l+x,a</em>{l+1}+x,…a_{r-1}+x,a_r+x,…,a_n​$</p><p>if we use $a<em>i -a</em>{i-1}$,we can get a new array $b_i​$</p><p>the origin array:</p><p>$a_1-a_0,a_2-a_1,a_3-a_2,a<em>l-a</em>{l-1},a<em>{l+1}-a</em>{l},…,a<em>{r}-a</em>{r-1},a_{r+1}-a_r,…,a<em>n-a</em>{n-1}​$</p><p>after operation:</p><p>$a_1-a_0,a_2-a_1,a_3-a_2,a<em>l-a</em>{l-1}+x,a<em>{l+1}-a</em>{l},…,a<em>{r}-a</em>{r-1},a_{r+1}-a_r-x,…,a<em>n-a</em>{n-1}$</p><p><strong>we can draw a conclusion,if we add x to segment[l:r] in a, </strong></p><p><strong>we can do it by $add(a<em>l,x) ,add(a</em>{r+1},-x)​$ to b instead</strong></p><p><strong>if we want to get the value of $a_t$,just caculate the prefix sum of $b_1+…+b_t$.</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      this content descripe the prefix sum algorithm and difference idea.
+    
+    </summary>
+    
+    
+      <category term="data-structure" scheme="https://sunyinkai.github.io/tags/data-structure/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>the shortest path dijkstra</title>
+    <link href="https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/"/>
+    <id>https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/</id>
+    <published>2019-03-25T14:20:53.000Z</published>
+    <updated>2019-03-25T15:27:14.829Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="What’s-the-Shortest-Path"><a href="#What’s-the-Shortest-Path" class="headerlink" title="What’s the Shortest Path?"></a>What’s the Shortest Path?</h4><p>  The shortest path algorithm aims to solve a problem like this,<strong>“ Give you a directed weighted graph(or undirected graph,it doesn’t matter),how to calculate the shortest path  from point A to point B “</strong></p><h4 id="How-to-Solve-it"><a href="#How-to-Solve-it" class="headerlink" title="How to Solve it ?"></a>How to Solve it ?</h4><p>  To solve this problem,I want to talk about the dijkstra algorithm,this algorithm has a premise,that’s <strong>all the edge weight must be a positive number.</strong> I will explain for it soon.</p><p>  This algorithm work as beblow:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0, init the distance array,make d[A]=0,and d[others]=INF(A is the start point)</span><br><span class="line">1, push A to a set S.</span><br><span class="line">2, from the set S choose a vertex V which V is the most nearest to A,that&apos;s the d[V]=min&#123;d[S]&#125;,and    V has not done the process 3</span><br><span class="line">3, update all the vertexes which connected by V,push these points to the S,and mark the V is done.</span><br><span class="line">4,repeat the 2 and 3 until all the points are done.</span><br></pre></td></tr></table></figure><p>From the above processes we can see that this algorithm choose the point which is nearest to the start point,hence,it’s a greedy algorithm.</p><p>Why it’s correct?</p><p>Consider that D is the point we want to calculate,and B,C are the points which we have worked out.</p><p>the d[D] must be equal to min{d[B]+BD,d[C]+CD},that’s the minimum path from A to D must be equal to one of the neighboring points’ minimum path plus a edge weight.</p><h4 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it ?"></a>How to code it ?</h4><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2544" target="_blank" rel="noopener">the problem click here</a></p><p>[the code click here ]</p><h4 id="the-shortest-path-tree"><a href="#the-shortest-path-tree" class="headerlink" title="the shortest path tree"></a>the shortest path tree</h4><h4 id="the-shortest-path-graph"><a href="#the-shortest-path-graph" class="headerlink" title="the shortest path graph"></a>the shortest path graph</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;What’s-the-Shortest-Path&quot;&gt;&lt;a href=&quot;#What’s-the-Shortest-Path&quot; class=&quot;headerlink&quot; title=&quot;What’s the Shortest Path?&quot;&gt;&lt;/a&gt;What’s the Sh
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>the minimum spanning tree</title>
     <link href="https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/"/>
     <id>https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/</id>
     <published>2019-03-02T11:45:05.000Z</published>
-    <updated>2019-03-02T13:10:38.935Z</updated>
+    <updated>2019-03-25T15:28:36.557Z</updated>
     
     <content type="html"><![CDATA[<h4 id="What’s-MST"><a href="#What’s-MST" class="headerlink" title="What’s MST?"></a>What’s MST?</h4><p>  Today,I want to share an algorithm which called the “the minimum spanning tree”,shortly,”MST”.It’s a graph algorithm,which was used for solve a problem like this,<strong>“give you an undireted weighted graph,you should choose some edges to the connect the graph and make the cost is the cheapest”</strong></p><h4 id="How-to-sovle-it"><a href="#How-to-sovle-it" class="headerlink" title="How to sovle it?"></a>How to sovle it?</h4><p>  Sounds difficult?Let’s try to solve it step by step.</p><p>  First of all,we can deduce that the result of edges which we select can form a tree.why?</p><p>   Concerned that if the results not a tree,we can remove some edges to make it still connect all points with the lower cost.But if we remove too much to make it impossible to form a tree,that will not satisfy the condition. <strong>Hence,the result must be a tree.</strong></p><p>  But how to calculate the tree?There is an algoriyhm called the Kruskal algorithm.</p><p>  Let’s learn the procedure of it first ,then I will prove it’s correct.</p><p>  The procedure of Kruskal:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1, Sort all the edges by the cost from cheap to dear.</span><br><span class="line">2, Scanning the edges one by one,</span><br><span class="line">if the edge can connect two connect-block</span><br><span class="line">add it to the result set;</span><br><span class="line">else(that&apos;s the edge connect the same connect-block)</span><br><span class="line">    skip it;</span><br><span class="line">    check the next edge,and repeat the above judgement.</span><br></pre></td></tr></table></figure><p>Why it’s correct ?</p><p> Let me say one more words,the main idea of the above algorithm is called <strong>“greedy”</strong>,that’s it always take the lowest edge which connect two connected-block.</p><p>  Anyway,let’s take our business.</p><p>  <img src="/images/MST.png" alt="pic"></p><p> Consider that we have formed the minimum spanning tree,however,we don’t have the cheapest ,maybe it’s the edge A-C,it doesn’t matter.But if we add the edge “A-C” to the result set,and remove one of the highest cost in A-B,B-C,it still satitify the condition but with a  lower cost!That’s all.</p><h4 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it?"></a>How to code it?</h4><p><a href="https://www.51nod.com/Challenge/Problem.html#!#problemId=1212" target="_blank" rel="noopener">the problem please click here</a></p><p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/MST.cpp" target="_blank" rel="noopener">the code please click here</a></p>]]></content>
     
@@ -201,9 +242,9 @@
     </summary>
     
     
-      <category term="STL" scheme="https://sunyinkai.github.io/tags/STL/"/>
-    
       <category term="瞎搞" scheme="https://sunyinkai.github.io/tags/%E7%9E%8E%E6%90%9E/"/>
+    
+      <category term="STL" scheme="https://sunyinkai.github.io/tags/STL/"/>
     
   </entry>
   
@@ -301,9 +342,9 @@
     </summary>
     
     
-      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
-    
       <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
@@ -377,11 +418,11 @@
     </summary>
     
     
-      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+      <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
-      <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
+      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
@@ -404,13 +445,13 @@
     </summary>
     
     
-      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
-    
-      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
+    
+      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
@@ -433,9 +474,9 @@
     </summary>
     
     
-      <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
       <category term="topo排序" scheme="https://sunyinkai.github.io/tags/topo%E6%8E%92%E5%BA%8F/"/>
+    
+      <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
     

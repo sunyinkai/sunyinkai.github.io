@@ -15,16 +15,17 @@
 
 
 
-<meta name="description" content="ACM,ICPC,codeforce">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CaCO3">
-<meta property="og:url" content="https://sunyinkai.github.io/tags/专题/index.html">
+<meta name="description" content="What’s the Shortest Path?  The shortest path algorithm aims to solve a problem like this,“ Give you a directed weighted graph(or undirected graph,it doesn’t matter),how to calculate the shortest path">
+<meta property="og:type" content="article">
+<meta property="og:title" content="the shortest path dijkstra">
+<meta property="og:url" content="https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/index.html">
 <meta property="og:site_name" content="CaCO3">
-<meta property="og:description" content="ACM,ICPC,codeforce">
+<meta property="og:description" content="What’s the Shortest Path?  The shortest path algorithm aims to solve a problem like this,“ Give you a directed weighted graph(or undirected graph,it doesn’t matter),how to calculate the shortest path">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-25T15:27:14.829Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CaCO3">
-<meta name="twitter:description" content="ACM,ICPC,codeforce">
+<meta name="twitter:title" content="the shortest path dijkstra">
+<meta name="twitter:description" content="What’s the Shortest Path?  The shortest path algorithm aims to solve a problem like this,“ Give you a directed weighted graph(or undirected graph,it doesn’t matter),how to calculate the shortest path">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -56,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: 专题 | CaCO3</title>
+<title>the shortest path dijkstra | CaCO3</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -66,9 +67,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -250,88 +251,199 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-the-shortest-path-dijkstra" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/03/31/网络流专题/" class="archive-article-date">
-      <time datetime="2018-03-31T08:54:08.000Z" itemprop="datePublished">03-31</time>
+    <div class="article-meta">
+      <a href="/2019/03/25/the-shortest-path-dijkstra/" class="article-date">
+      <time datetime="2019-03-25T14:20:53.000Z" itemprop="datePublished">2019-03-25</time>
 </a>
 
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/31/网络流专题/">网络流专题</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      the shortest path dijkstra
     </h1>
   
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
 
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/专题/">专题</a></li></ul>
+        <h4 id="What’s-the-Shortest-Path"><a href="#What’s-the-Shortest-Path" class="headerlink" title="What’s the Shortest Path?"></a>What’s the Shortest Path?</h4><p>  The shortest path algorithm aims to solve a problem like this,<strong>“ Give you a directed weighted graph(or undirected graph,it doesn’t matter),how to calculate the shortest path  from point A to point B “</strong></p>
+<h4 id="How-to-Solve-it"><a href="#How-to-Solve-it" class="headerlink" title="How to Solve it ?"></a>How to Solve it ?</h4><p>  To solve this problem,I want to talk about the dijkstra algorithm,this algorithm has a premise,that’s <strong>all the edge weight must be a positive number.</strong> I will explain for it soon.</p>
+<p>  This algorithm work as beblow:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0, init the distance array,make d[A]=0,and d[others]=INF(A is the start point)</span><br><span class="line">1, push A to a set S.</span><br><span class="line">2, from the set S choose a vertex V which V is the most nearest to A,that&apos;s the d[V]=min&#123;d[S]&#125;,and    V has not done the process 3</span><br><span class="line">3, update all the vertexes which connected by V,push these points to the S,and mark the V is done.</span><br><span class="line">4,repeat the 2 and 3 until all the points are done.</span><br></pre></td></tr></table></figure>
+<p>From the above processes we can see that this algorithm choose the point which is nearest to the start point,hence,it’s a greedy algorithm.</p>
+<p>Why it’s correct?</p>
+<p>Consider that D is the point we want to calculate,and B,C are the points which we have worked out.</p>
+<p>the d[D] must be equal to min{d[B]+BD,d[C]+CD},that’s the minimum path from A to D must be equal to one of the neighboring points’ minimum path plus a edge weight.</p>
+<h4 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it ?"></a>How to code it ?</h4><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2544" target="_blank" rel="noopener">the problem click here</a></p>
+<p>[the code click here ]</p>
+<h4 id="the-shortest-path-tree"><a href="#the-shortest-path-tree" class="headerlink" title="the shortest path tree"></a>the shortest path tree</h4><h4 id="the-shortest-path-graph"><a href="#the-shortest-path-graph" class="headerlink" title="the shortest path graph"></a>the shortest path graph</h4>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2019/03/25/the-shortest-path-dijkstra/">the shortest path dijkstra</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">CaCO3</a></p>
+        <p><span>Created:</span>2019-03-25, 22:20:53</p>
+        <p><span>Updated:</span>2019-03-25, 23:27:14</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2019/03/25/the-shortest-path-dijkstra/" title="the shortest path dijkstra">https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/</a>
+            <span class="copy-path" data-clipboard-text="From https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/　　By CaCO3" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+
+
+    <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/04/22/prefix-sum/">
+                    prefix sum
+                </a>
+            </div>
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/03/02/the-minium-spanning-tree/">
+                    the minimum spanning tree
+                </a>
+            </div>
+        
+    </nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2018/03/23/连通分量专题/" class="archive-article-date">
-      <time datetime="2018-03-22T16:21:02.000Z" itemprop="datePublished">03-23</time>
-</a>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#What’s-the-Shortest-Path"><span class="toc-number">1.</span> <span class="toc-text">What’s the Shortest Path?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-Solve-it"><span class="toc-number">2.</span> <span class="toc-text">How to Solve it ?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-code-it"><span class="toc-number">3.</span> <span class="toc-text">How to code it ?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#the-shortest-path-tree"><span class="toc-number">4.</span> <span class="toc-text">the shortest path tree</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#the-shortest-path-graph"><span class="toc-number">5.</span> <span class="toc-text">the shortest path graph</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
         </div>
-         
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"the shortest path dijkstra　| CaCO3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/23/连通分量专题/">连通分量专题</a>
-    </h1>
+  <!-- Gitment评论插件通用代码 -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: 'Mon Mar 25 2019 22:20:53 GMT+0800',
+  owner: "sunyinkai",//github用户名
+  repo: "gitment-comments",//用户存储评论的github项目名称
+  oauth: {
+    client_id: "3c2763d0ed9764739ca1",//注册OAuth Application时生产的ClinetID
+    client_secret:"bfab2f880ae673302f221c7bf40353a99d3a183c",//注册OAuth Application时生成的Client Secret
+  },
+})
+gitment.render('git')
+</script>
+<!-- Gitment代码结束 -->
+
   
 
-        <div class="article-info info-on-archive">
-          
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/专题/">专题</a></li></ul>
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2019/04/22/prefix-sum/" title="Pre: prefix sum">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/03/02/the-minium-spanning-tree/" title="Next: the minimum spanning tree">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
     </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/22/prefix-sum/">prefix sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/25/the-shortest-path-dijkstra/">the shortest path dijkstra</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/02/the-minium-spanning-tree/">the minimum spanning tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/24/usage/">how to use hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/31/网络流专题/">网络流专题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/30/codevs1288-埃及分数问题-迭代加深/">codevs1288 埃及分数问题 迭代加深</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/连通分量专题/">连通分量专题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/">HDOJ6180 Schedule 前缀和+瞎搞+输入挂</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/16/soj4554-Boring-Game-HASH/">soj4554 Boring Game HASH</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/12/CF949A-Zebras-瞎搞-set维护/">CF949A Zebras 瞎搞+set维护</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/12/CF948C-Producing-Snow-前缀和-二分/">CF948C Producing Snow 前缀和+二分</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/10/LightOJ1060-nth-Permutaiton-计数的思想/">LightOJ1060 nth Permutaiton 计数的思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/03/LightOJ1057-Collecting-Gold-旅行商问题/">LightOJ1057 Collecting Gold 旅行商问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/CF846B-思维/">CF846B 思维</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/Race-to-1-Again-期望/">Race to 1 Again 期望</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/27/CF938D_多源最短路/">CF938D 多源最短路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/23/CF891A/">CF891A Pride</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/CF938C/">CF938C</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/CF909E/">CF909E Coprocessor</a></li></ul>
 
-    
+
+
+
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">

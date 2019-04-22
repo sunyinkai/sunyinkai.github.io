@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sunyinkai.github.io/2019/04/22/prefix-sum/</loc>
+    
+    <lastmod>2019-04-22T15:42:33.188Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/</loc>
     
-    <lastmod>2019-03-02T13:10:38.935Z</lastmod>
+    <lastmod>2019-03-25T15:28:36.557Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/</loc>
+    
+    <lastmod>2019-03-25T15:27:14.829Z</lastmod>
     
   </url>
   
