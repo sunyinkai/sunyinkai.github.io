@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sunyinkai.github.io/2019/04/28/range-minimum-query/</loc>
+    
+    <lastmod>2019-04-28T14:40:21.843Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/</loc>
+    
+    <lastmod>2019-04-28T14:07:15.864Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sunyinkai.github.io/2019/04/22/prefix-sum/</loc>
     
     <lastmod>2019-04-22T15:56:12.983Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/</loc>
     
     <lastmod>2019-03-25T15:28:36.557Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/</loc>
-    
-    <lastmod>2019-03-25T15:27:14.829Z</lastmod>
     
   </url>
   

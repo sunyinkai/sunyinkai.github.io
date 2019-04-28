@@ -3,6 +3,36 @@
   
     
     <entry>
+      <title><![CDATA[range minimum query]]></title>
+      <url>/2019/04/28/range-minimum-query/</url>
+      <content type="html"><![CDATA[<h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in short. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s without modifying.</p>
+<h4 id="How-to-solve-this"><a href="#How-to-solve-this" class="headerlink" title="How to solve this?"></a>How to solve this?</h4><p>  We can solve the above problem with dynamic programming solution.</p>
+<p>step 1:  preprocessing.</p>
+<p>  Let’s $dp[i][k]: $ the begin element is $a_i$,and the length is $2^k$ ,the minimum element in this range.</p>
+<p>  We  can get an equation:</p>
+<p>​    $dp[i][k] = min(dp[i][k-1],dp[i+(1&lt;&lt;(k-1))][k-1])$</p>
+<p>It’s certainly right,and the preprocessing complexity is$O(NlogN)​$.that’s for the maximum of k is $logN​$.</p>
+<p>step 2:  query.</p>
+<p>Now,we can focus on how to answer the query.give the conclusion:</p>
+<p>$query(l,r)=min{dp[i][L],dp[j-L+1][L]}​$ </p>
+<p>$L=2^t$ stands the length which can cover at lease half of the segment’s length.</p>
+<p>Why?</p>
+<p>the below diagram can account for this.</p>
+<p><img src="/images/ST.png" alt=""></p>
+<h4 id="how-to-code-it"><a href="#how-to-code-it" class="headerlink" title="how to code it?"></a>how to code it?</h4><p><a href="http://poj.org/problem?id=3264" target="_blank" rel="noopener">the problem</a></p>
+<p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/RMQ.cpp" target="_blank" rel="noopener">the code</a></p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> dp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[prefix sum]]></title>
       <url>/2019/04/22/prefix-sum/</url>
       <content type="html"><![CDATA[<h4 id="what’-s-prefix-sum"><a href="#what’-s-prefix-sum" class="headerlink" title="what’ s prefix sum?"></a>what’ s prefix sum?</h4><p>Consider the follow situation:</p>
@@ -65,6 +95,12 @@
 <p>[the code click here ]</p>
 <h4 id="the-shortest-path-tree"><a href="#the-shortest-path-tree" class="headerlink" title="the shortest path tree"></a>the shortest path tree</h4><h4 id="the-shortest-path-graph"><a href="#the-shortest-path-graph" class="headerlink" title="the shortest path graph"></a>the shortest path graph</h4>]]></content>
       
+        
+        <tags>
+            
+            <tag> graph </tag>
+            
+        </tags>
         
     </entry>
     
@@ -294,9 +330,9 @@
         
         <tags>
             
-            <tag> STL </tag>
-            
             <tag> 瞎搞 </tag>
+            
+            <tag> STL </tag>
             
         </tags>
         
@@ -408,9 +444,9 @@
         
         <tags>
             
-            <tag> 思维 </tag>
-            
             <tag> 数学 </tag>
+            
+            <tag> 思维 </tag>
             
         </tags>
         
@@ -452,11 +488,11 @@
         
         <tags>
             
-            <tag> CF CDE </tag>
-            
             <tag> 最短路 </tag>
             
             <tag> 图论 </tag>
+            
+            <tag> CF CDE </tag>
             
         </tags>
         
@@ -497,11 +533,11 @@
         
         <tags>
             
-            <tag> 思维 </tag>
+            <tag> 贪心 </tag>
             
             <tag> 数学 </tag>
             
-            <tag> 贪心 </tag>
+            <tag> 思维 </tag>
             
         </tags>
         
@@ -536,11 +572,11 @@
         
         <tags>
             
-            <tag> 思维 </tag>
+            <tag> 贪心 </tag>
             
             <tag> 数学 </tag>
             
-            <tag> 贪心 </tag>
+            <tag> 思维 </tag>
             
             <tag> CF CDE </tag>
             
@@ -583,9 +619,9 @@
             
             <tag> 贪心 </tag>
             
-            <tag> topo排序 </tag>
-            
             <tag> CF CDE </tag>
+            
+            <tag> topo排序 </tag>
             
         </tags>
         

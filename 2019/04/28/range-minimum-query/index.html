@@ -15,17 +15,20 @@
 
 
 
-<meta name="description" content="四川大学计科2016级学生 邮件:1091491336@qq.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about me">
-<meta property="og:url" content="https://sunyinkai.github.io/about/index.html">
+<meta name="description" content="the content descripe an algorithm to solve the range minimum query without modifying">
+<meta name="keywords" content="dp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="range minimum query">
+<meta property="og:url" content="https://sunyinkai.github.io/2019/04/28/range-minimum-query/index.html">
 <meta property="og:site_name" content="CaCO3">
-<meta property="og:description" content="四川大学计科2016级学生 邮件:1091491336@qq.com">
+<meta property="og:description" content="the content descripe an algorithm to solve the range minimum query without modifying">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-11T08:07:56.316Z">
+<meta property="og:image" content="https://sunyinkai.github.io/images/ST.png">
+<meta property="og:updated_time" content="2019-04-28T14:40:21.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="about me">
-<meta name="twitter:description" content="四川大学计科2016级学生 邮件:1091491336@qq.com">
+<meta name="twitter:title" content="range minimum query">
+<meta name="twitter:description" content="the content descripe an algorithm to solve the range minimum query without modifying">
+<meta name="twitter:image" content="https://sunyinkai.github.io/images/ST.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -57,7 +60,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>about me | CaCO3</title>
+<title>range minimum query | CaCO3</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -67,7 +70,7 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
         isTag: false,
         isCategory: false,
@@ -251,11 +254,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-range-minimum-query" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/about/index.html" class="article-date">
-      <time datetime="2018-02-11T08:01:04.000Z" itemprop="datePublished">2018-02-11</time>
+      <a href="/2019/04/28/range-minimum-query/" class="article-date">
+      <time datetime="2019-04-28T14:08:22.000Z" itemprop="datePublished">2019-04-28</time>
 </a>
 
 
@@ -270,7 +273,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      about me
+      range minimum query
     </h1>
   
 
@@ -280,6 +283,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -287,28 +294,22 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-
-          
-        <p>四川大学计科2016级学生</p>
-<p>邮件:1091491336@qq.com</p>
+        <h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in short. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s without modifying.</p>
+<h4 id="How-to-solve-this"><a href="#How-to-solve-this" class="headerlink" title="How to solve this?"></a>How to solve this?</h4><p>  We can solve the above problem with dynamic programming solution.</p>
+<p>step 1:  preprocessing.</p>
+<p>  Let’s $dp[i][k]: $ the begin element is $a_i$,and the length is $2^k$ ,the minimum element in this range.</p>
+<p>  We  can get an equation:</p>
+<p>​    $dp[i][k] = min(dp[i][k-1],dp[i+(1&lt;&lt;(k-1))][k-1])$</p>
+<p>It’s certainly right,and the preprocessing complexity is$O(NlogN)​$.that’s for the maximum of k is $logN​$.</p>
+<p>step 2:  query.</p>
+<p>Now,we can focus on how to answer the query.give the conclusion:</p>
+<p>$query(l,r)=min{dp[i][L],dp[j-L+1][L]}​$ </p>
+<p>$L=2^t$ stands the length which can cover at lease half of the segment’s length.</p>
+<p>Why?</p>
+<p>the below diagram can account for this.</p>
+<p><img src="/images/ST.png" alt=""></p>
+<h4 id="how-to-code-it"><a href="#how-to-code-it" class="headerlink" title="how to code it?"></a>how to code it?</h4><p><a href="http://poj.org/problem?id=3264" target="_blank" rel="noopener">the problem</a></p>
+<p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/RMQ.cpp" target="_blank" rel="noopener">the code</a></p>
 
       
     </div>
@@ -316,10 +317,59 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2019/04/28/range-minimum-query/">range minimum query</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">CaCO3</a></p>
+        <p><span>Created:</span>2019-04-28, 22:08:22</p>
+        <p><span>Updated:</span>2019-04-28, 22:40:21</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/2019/04/28/range-minimum-query/" title="range minimum query">https://sunyinkai.github.io/2019/04/28/range-minimum-query/</a>
+            <span class="copy-path" data-clipboard-text="From https://sunyinkai.github.io/2019/04/28/range-minimum-query/　　By CaCO3" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/04/22/prefix-sum/">
+                    prefix sum
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">Contents</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#what’s-the-range-minimum-query"><span class="toc-number">1.</span> <span class="toc-text">what’s the range minimum query?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-solve-this"><span class="toc-number">2.</span> <span class="toc-text">How to solve this?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#how-to-code-it"><span class="toc-number">3.</span> <span class="toc-text">how to code it?</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+
+    <script>
+        yiliaConfig.toc = ["Hide", "Show", !!"false"];
+    </script>
 
 
 
@@ -337,7 +387,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"about me　| CaCO3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"range minimum query　| CaCO3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -360,7 +410,7 @@
 <script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: 'Sun Feb 11 2018 16:01:04 GMT+0800',
+  id: 'Sun Apr 28 2019 22:08:22 GMT+0800',
   owner: "sunyinkai",//github用户名
   repo: "gitment-comments",//用户存储评论的github项目名称
   oauth: {
@@ -374,6 +424,24 @@ gitment.render('git')
 
   
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/04/22/prefix-sum/" title="Next: prefix sum">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/28/range-minimum-query/">range minimum query</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/22/prefix-sum/">prefix sum</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/25/the-shortest-path-dijkstra/">the shortest path dijkstra</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/02/the-minium-spanning-tree/">the minimum spanning tree</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/12/24/usage/">how to use hexo</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/31/网络流专题/">网络流专题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/30/codevs1288-埃及分数问题-迭代加深/">codevs1288 埃及分数问题 迭代加深</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/23/连通分量专题/">连通分量专题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/17/HDOJ6180-Schedule-前缀和-瞎搞-输入挂/">HDOJ6180 Schedule 前缀和+瞎搞+输入挂</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/16/soj4554-Boring-Game-HASH/">soj4554 Boring Game HASH</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/12/CF949A-Zebras-瞎搞-set维护/">CF949A Zebras 瞎搞+set维护</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/12/CF948C-Producing-Snow-前缀和-二分/">CF948C Producing Snow 前缀和+二分</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/10/LightOJ1060-nth-Permutaiton-计数的思想/">LightOJ1060 nth Permutaiton 计数的思想</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/03/LightOJ1057-Collecting-Gold-旅行商问题/">LightOJ1057 Collecting Gold 旅行商问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/01/CF846B-思维/">CF846B 思维</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/28/Race-to-1-Again-期望/">Race to 1 Again 期望</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/27/CF938D_多源最短路/">CF938D 多源最短路</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/23/CF891A/">CF891A Pride</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/21/CF938C/">CF938C</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/02/11/CF909E/">CF909E Coprocessor</a></li></ul>
 
 
 
