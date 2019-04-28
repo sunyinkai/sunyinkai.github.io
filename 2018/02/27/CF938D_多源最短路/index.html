@@ -16,7 +16,7 @@
 
 
 <meta name="description" content="题目给你$N$个点, 有点权$a[i]$, 有$M$条边, 每条边有边权$c[i]$, 对于每个$i$ ,$j$ 为任意点,求$min(dist(i,j)*2+a[j])$ $N,M \leq 2*10^5$ 分析题目相当于求每个点到图中的最短路,既多源最短路.可以利用堆优化的dijkstra求得.因为堆顶每次都为到改点的距离最小值,我们每次取出堆顶,然后向相邻点扩展即可. 代码123456789">
-<meta name="keywords" content="最短路,图论,CF CDE">
+<meta name="keywords" content="CF CDE,最短路,图论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CF938D 多源最短路">
 <meta property="og:url" content="https://sunyinkai.github.io/2018/02/27/CF938D_多源最短路/index.html">

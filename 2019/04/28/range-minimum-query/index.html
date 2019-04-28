@@ -15,19 +15,19 @@
 
 
 
-<meta name="description" content="the content descripe an algorithm to solve the range minimum query without modifying">
+<meta name="description" content="the content descripe the Sparse Table algorithm to solve the range minimum query without modifying problem.">
 <meta name="keywords" content="dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="range minimum query">
 <meta property="og:url" content="https://sunyinkai.github.io/2019/04/28/range-minimum-query/index.html">
 <meta property="og:site_name" content="CaCO3">
-<meta property="og:description" content="the content descripe an algorithm to solve the range minimum query without modifying">
+<meta property="og:description" content="the content descripe the Sparse Table algorithm to solve the range minimum query without modifying problem.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://sunyinkai.github.io/images/ST.png">
-<meta property="og:updated_time" content="2019-04-28T14:40:21.843Z">
+<meta property="og:updated_time" content="2019-04-28T14:45:29.413Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="range minimum query">
-<meta name="twitter:description" content="the content descripe an algorithm to solve the range minimum query without modifying">
+<meta name="twitter:description" content="the content descripe the Sparse Table algorithm to solve the range minimum query without modifying problem.">
 <meta name="twitter:image" content="https://sunyinkai.github.io/images/ST.png">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -294,7 +294,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in short. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s without modifying.</p>
+        <h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in shortly. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s the without modifying one.</p>
 <h4 id="How-to-solve-this"><a href="#How-to-solve-this" class="headerlink" title="How to solve this?"></a>How to solve this?</h4><p>  We can solve the above problem with dynamic programming solution.</p>
 <p>step 1:  preprocessing.</p>
 <p>  Let’s $dp[i][k]: $ the begin element is $a_i$,and the length is $2^k$ ,the minimum element in this range.</p>
@@ -321,7 +321,7 @@
         <p><span>Title:</span><a href="/2019/04/28/range-minimum-query/">range minimum query</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">CaCO3</a></p>
         <p><span>Created:</span>2019-04-28, 22:08:22</p>
-        <p><span>Updated:</span>2019-04-28, 22:40:21</p>
+        <p><span>Updated:</span>2019-04-28, 22:45:29</p>
         <p>
             <span>Full URL:</span><a class="post-url" href="/2019/04/28/range-minimum-query/" title="range minimum query">https://sunyinkai.github.io/2019/04/28/range-minimum-query/</a>
             <span class="copy-path" data-clipboard-text="From https://sunyinkai.github.io/2019/04/28/range-minimum-query/　　By CaCO3" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>

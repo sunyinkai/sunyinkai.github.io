@@ -5,7 +5,7 @@
     <entry>
       <title><![CDATA[range minimum query]]></title>
       <url>/2019/04/28/range-minimum-query/</url>
-      <content type="html"><![CDATA[<h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in short. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s without modifying.</p>
+      <content type="html"><![CDATA[<h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in shortly. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s the without modifying one.</p>
 <h4 id="How-to-solve-this"><a href="#How-to-solve-this" class="headerlink" title="How to solve this?"></a>How to solve this?</h4><p>  We can solve the above problem with dynamic programming solution.</p>
 <p>step 1:  preprocessing.</p>
 <p>  Let’s $dp[i][k]: $ the begin element is $a_i$,and the length is $2^k$ ,the minimum element in this range.</p>
@@ -330,9 +330,9 @@
         
         <tags>
             
-            <tag> 瞎搞 </tag>
-            
             <tag> STL </tag>
+            
+            <tag> 瞎搞 </tag>
             
         </tags>
         
@@ -444,9 +444,9 @@
         
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 思维 </tag>
+            
+            <tag> 数学 </tag>
             
         </tags>
         
@@ -488,11 +488,11 @@
         
         <tags>
             
+            <tag> CF CDE </tag>
+            
             <tag> 最短路 </tag>
             
             <tag> 图论 </tag>
-            
-            <tag> CF CDE </tag>
             
         </tags>
         
@@ -533,11 +533,11 @@
         
         <tags>
             
+            <tag> 思维 </tag>
+            
             <tag> 贪心 </tag>
             
             <tag> 数学 </tag>
-            
-            <tag> 思维 </tag>
             
         </tags>
         
@@ -572,11 +572,11 @@
         
         <tags>
             
+            <tag> 思维 </tag>
+            
             <tag> 贪心 </tag>
             
             <tag> 数学 </tag>
-            
-            <tag> 思维 </tag>
             
             <tag> CF CDE </tag>
             

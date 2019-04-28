@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunyinkai.github.io/"/>
-  <updated>2019-04-28T14:40:21.843Z</updated>
+  <updated>2019-04-28T14:45:29.413Z</updated>
   <id>https://sunyinkai.github.io/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="https://sunyinkai.github.io/2019/04/28/range-minimum-query/"/>
     <id>https://sunyinkai.github.io/2019/04/28/range-minimum-query/</id>
     <published>2019-04-28T14:08:22.000Z</published>
-    <updated>2019-04-28T14:40:21.843Z</updated>
+    <updated>2019-04-28T14:45:29.413Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in short. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s without modifying.</p><h4 id="How-to-solve-this"><a href="#How-to-solve-this" class="headerlink" title="How to solve this?"></a>How to solve this?</h4><p>  We can solve the above problem with dynamic programming solution.</p><p>step 1:  preprocessing.</p><p>  Let’s $dp[i][k]: $ the begin element is $a_i$,and the length is $2^k$ ,the minimum element in this range.</p><p>  We  can get an equation:</p><p>​    $dp[i][k] = min(dp[i][k-1],dp[i+(1&lt;&lt;(k-1))][k-1])$</p><p>It’s certainly right,and the preprocessing complexity is$O(NlogN)​$.that’s for the maximum of k is $logN​$.</p><p>step 2:  query.</p><p>Now,we can focus on how to answer the query.give the conclusion:</p><p>$query(l,r)=min{dp[i][L],dp[j-L+1][L]}​$ </p><p>$L=2^t$ stands the length which can cover at lease half of the segment’s length.</p><p>Why?</p><p>the below diagram can account for this.</p><p><img src="/images/ST.png" alt=""></p><h4 id="how-to-code-it"><a href="#how-to-code-it" class="headerlink" title="how to code it?"></a>how to code it?</h4><p><a href="http://poj.org/problem?id=3264" target="_blank" rel="noopener">the problem</a></p><p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/RMQ.cpp" target="_blank" rel="noopener">the code</a></p>]]></content>
+    <content type="html"><![CDATA[<h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in shortly. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s the without modifying one.</p><h4 id="How-to-solve-this"><a href="#How-to-solve-this" class="headerlink" title="How to solve this?"></a>How to solve this?</h4><p>  We can solve the above problem with dynamic programming solution.</p><p>step 1:  preprocessing.</p><p>  Let’s $dp[i][k]: $ the begin element is $a_i$,and the length is $2^k$ ,the minimum element in this range.</p><p>  We  can get an equation:</p><p>​    $dp[i][k] = min(dp[i][k-1],dp[i+(1&lt;&lt;(k-1))][k-1])$</p><p>It’s certainly right,and the preprocessing complexity is$O(NlogN)​$.that’s for the maximum of k is $logN​$.</p><p>step 2:  query.</p><p>Now,we can focus on how to answer the query.give the conclusion:</p><p>$query(l,r)=min{dp[i][L],dp[j-L+1][L]}​$ </p><p>$L=2^t$ stands the length which can cover at lease half of the segment’s length.</p><p>Why?</p><p>the below diagram can account for this.</p><p><img src="/images/ST.png" alt=""></p><h4 id="how-to-code-it"><a href="#how-to-code-it" class="headerlink" title="how to code it?"></a>how to code it?</h4><p><a href="http://poj.org/problem?id=3264" target="_blank" rel="noopener">the problem</a></p><p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/RMQ.cpp" target="_blank" rel="noopener">the code</a></p>]]></content>
     
     <summary type="html">
     
-      the content descripe an algorithm to solve the range minimum query without modifying
+      the content descripe the Sparse Table algorithm to solve the range minimum query without modifying problem.
     
     </summary>
     
@@ -261,9 +261,9 @@
     </summary>
     
     
-      <category term="瞎搞" scheme="https://sunyinkai.github.io/tags/%E7%9E%8E%E6%90%9E/"/>
-    
       <category term="STL" scheme="https://sunyinkai.github.io/tags/STL/"/>
+    
+      <category term="瞎搞" scheme="https://sunyinkai.github.io/tags/%E7%9E%8E%E6%90%9E/"/>
     
   </entry>
   
@@ -361,9 +361,9 @@
     </summary>
     
     
-      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -409,11 +409,11 @@
     </summary>
     
     
+      <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
+    
       <category term="最短路" scheme="https://sunyinkai.github.io/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/"/>
     
       <category term="图论" scheme="https://sunyinkai.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
-    
-      <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
     
   </entry>
   
@@ -437,11 +437,11 @@
     </summary>
     
     
+      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
       <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
@@ -464,11 +464,11 @@
     </summary>
     
     
+      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
+    
       <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
       <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
-      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
       <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
     
