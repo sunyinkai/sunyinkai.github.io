@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="this content descripe the MST algorithm">
-<meta name="keywords" content="graph">
+<meta name="description" content="this content discuss the shortest path algorithm we call it Floyd,it only have four lines.">
+<meta name="keywords" content="graph,dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="the minimum spanning tree">
-<meta property="og:url" content="https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/index.html">
+<meta property="og:title" content="the shortest path floyd">
+<meta property="og:url" content="https://sunyinkai.github.io/2019/04/29/the-shortest-path-floyd/index.html">
 <meta property="og:site_name" content="CaCO3">
-<meta property="og:description" content="this content descripe the MST algorithm">
+<meta property="og:description" content="this content discuss the shortest path algorithm we call it Floyd,it only have four lines.">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://sunyinkai.github.io/images/MST.png">
-<meta property="og:updated_time" content="2019-03-25T15:28:36.557Z">
+<meta property="og:updated_time" content="2019-04-29T09:18:28.627Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="the minimum spanning tree">
-<meta name="twitter:description" content="this content descripe the MST algorithm">
-<meta name="twitter:image" content="https://sunyinkai.github.io/images/MST.png">
+<meta name="twitter:title" content="the shortest path floyd">
+<meta name="twitter:description" content="this content discuss the shortest path algorithm we call it Floyd,it only have four lines.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>the minimum spanning tree | CaCO3</title>
+<title>the shortest path floyd | CaCO3</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -254,11 +252,11 @@
     </div>
     <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
-      <div class="body-wrap"><article id="post-the-minium-spanning-tree" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-the-shortest-path-floyd" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/02/the-minium-spanning-tree/" class="article-date">
-      <time datetime="2019-03-02T11:45:05.000Z" itemprop="datePublished">2019-03-02</time>
+      <a href="/2019/04/29/the-shortest-path-floyd/" class="article-date">
+      <time datetime="2019-04-29T08:49:00.000Z" itemprop="datePublished">2019-04-29</time>
 </a>
 
 
@@ -273,7 +271,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      the minimum spanning tree
+      the shortest path floyd
     </h1>
   
 
@@ -284,7 +282,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/graph/">graph</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dp/">dp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/graph/">graph</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -294,21 +292,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="What’s-MST"><a href="#What’s-MST" class="headerlink" title="What’s MST?"></a>What’s MST?</h4><p>  Today,I want to share an algorithm which called the “the minimum spanning tree”,shortly,”MST”.It’s a graph algorithm,which was used for solve a problem like this,<strong>“give you an undireted weighted graph,you should choose some edges to the connect the graph and make the cost is the cheapest”</strong></p>
-<h4 id="How-to-sovle-it"><a href="#How-to-sovle-it" class="headerlink" title="How to sovle it?"></a>How to sovle it?</h4><p>  Sounds difficult?Let’s try to solve it step by step.</p>
-<p>  First of all,we can deduce that the result of edges which we select can form a tree.why?</p>
-<p>   Concerned that if the results not a tree,we can remove some edges to make it still connect all points with the lower cost.But if we remove too much to make it impossible to form a tree,that will not satisfy the condition. <strong>Hence,the result must be a tree.</strong></p>
-<p>  But how to calculate the tree?There is an algoriyhm called the Kruskal algorithm.</p>
-<p>  Let’s learn the procedure of it first ,then I will prove it’s correct.</p>
-<p>  The procedure of Kruskal:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1, Sort all the edges by the cost from cheap to dear.</span><br><span class="line">2, Scanning the edges one by one,</span><br><span class="line">	if the edge can connect two connect-block</span><br><span class="line">		add it to the result set;</span><br><span class="line">	else(that&apos;s the edge connect the same connect-block)</span><br><span class="line">    	skip it;</span><br><span class="line">    check the next edge,and repeat the above judgement.</span><br></pre></td></tr></table></figure>
-<p>Why it’s correct ?</p>
-<p> Let me say one more words,the main idea of the above algorithm is called <strong>“greedy”</strong>,that’s it always take the lowest edge which connect two connected-block.</p>
-<p>  Anyway,let’s take our business.</p>
-<p>  <img src="/images/MST.png" alt="pic"></p>
-<p> Consider that we have formed the minimum spanning tree,however,we don’t have the cheapest ,maybe it’s the edge A-C,it doesn’t matter.But if we add the edge “A-C” to the result set,and remove one of the highest cost in A-B,B-C,it still satitify the condition but with a  lower cost!That’s all.</p>
-<h4 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it?"></a>How to code it?</h4><p><a href="https://www.51nod.com/Challenge/Problem.html#!#problemId=1212" target="_blank" rel="noopener">the problem please click here</a></p>
-<p><a href="https://github.com/sunyinkai/ACM_ICPC/blob/master/Templates/MST.cpp" target="_blank" rel="noopener">the code please click here</a></p>
+        <h4 id="what-is-Floyd"><a href="#what-is-Floyd" class="headerlink" title="what is Floyd?"></a>what is Floyd?</h4><p>Floyd,I think it’s  one of the most simple and beautiful algorithm in graph thoery,it only has four lines,but it has a very abundant background.</p>
+<p>Floyd takes  the dynamic programming solution to solve the shortest path problem.Let’s make </p>
+<p><strong>$dp[i][j][k]:$ the shortest path which  only use  point set {1…k} from point i to point j.</strong></p>
+<p><strong>$dp[i][j][k]=min(dp[i][j][k-1],dp[i][k][k-1]+dp[k][j][k-1]])$</strong> </p>
+<p>the above equation means that we can take out the point k,there will be two ways: whether pass the point k.</p>
+<p>if we don’t pass through it,the $dp[i][j][k]=dp[i][j][k-1]$,otherwise,</p>
+<p>there will be two steps,step 1,from point i to point k,and step 2,from point k to point j. that’s to say $dp[i][k][k-1]+dp[k][j][k-1]$ .</p>
+<p>But the above equation will consume a lot of memory,consider that the stage k only concerned with  stage k-1,hence we can use the sliding array.</p>
+<h4 id="How-to-Code-it"><a href="#How-to-Code-it" class="headerlink" title="How to Code it?"></a>How to Code it?</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//init</span></span><br><span class="line"><span class="comment">//if have a path from a to b with cost c ,dp[a][b]=c;</span></span><br><span class="line"><span class="comment">//else dp[a][b]=INF;</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=n;++k)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;++j)</span><br><span class="line">            dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]);</span><br></pre></td></tr></table></figure>
+<p><strong>notice: You should never put k in the second or third loop,because the k stands for the stage.</strong> </p>
 
       
     </div>
@@ -317,13 +310,13 @@
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2019/03/02/the-minium-spanning-tree/">the minimum spanning tree</a></p>
+        <p><span>Title:</span><a href="/2019/04/29/the-shortest-path-floyd/">the shortest path floyd</a></p>
         <p><span>Author:</span><a href="/" title="Back to Homepage">CaCO3</a></p>
-        <p><span>Created:</span>2019-03-02, 19:45:05</p>
-        <p><span>Updated:</span>2019-03-25, 23:28:36</p>
+        <p><span>Created:</span>2019-04-29, 16:49:00</p>
+        <p><span>Updated:</span>2019-04-29, 17:18:28</p>
         <p>
-            <span>Full URL:</span><a class="post-url" href="/2019/03/02/the-minium-spanning-tree/" title="the minimum spanning tree">https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/</a>
-            <span class="copy-path" data-clipboard-text="From https://sunyinkai.github.io/2019/03/02/the-minium-spanning-tree/　　By CaCO3" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <span>Full URL:</span><a class="post-url" href="/2019/04/29/the-shortest-path-floyd/" title="the shortest path floyd">https://sunyinkai.github.io/2019/04/29/the-shortest-path-floyd/</a>
+            <span class="copy-path" data-clipboard-text="From https://sunyinkai.github.io/2019/04/29/the-shortest-path-floyd/　　By CaCO3" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -335,16 +328,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/25/the-shortest-path-dijkstra/">
-                    the shortest path dijkstra
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2018/12/24/usage/">
-                    how to use hexo
+                <a href="/2019/04/28/range-minimum-query/">
+                    range minimum query
                 </a>
             </div>
         
@@ -356,7 +343,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">Contents</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#What’s-MST"><span class="toc-number">1.</span> <span class="toc-text">What’s MST?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-sovle-it"><span class="toc-number">2.</span> <span class="toc-text">How to sovle it?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-code-it"><span class="toc-number">3.</span> <span class="toc-text">How to code it?</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#what-is-Floyd"><span class="toc-number">1.</span> <span class="toc-text">what is Floyd?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#How-to-Code-it"><span class="toc-number">2.</span> <span class="toc-text">How to Code it?</span></a></li></ol>
         
     </div>
     <style>
@@ -392,7 +379,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"the minimum spanning tree　| CaCO3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"the shortest path floyd　| CaCO3　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -415,7 +402,7 @@
 <script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: 'Sat Mar 02 2019 19:45:05 GMT+0800',
+  id: 'Mon Apr 29 2019 16:49:00 GMT+0800',
   owner: "sunyinkai",//github用户名
   repo: "gitment-comments",//用户存储评论的github项目名称
   oauth: {
@@ -434,15 +421,13 @@ gitment.render('git')
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/25/the-shortest-path-dijkstra/" title="Pre: the shortest path dijkstra">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
         
 
         <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2018/12/24/usage/" title="Next: how to use hexo">
+            <a href="/2019/04/28/range-minimum-query/" title="Next: range minimum query">
                 <i class="fa fa-angle-right"></i>
             </a>
         

@@ -3,6 +3,32 @@
   
     
     <entry>
+      <title><![CDATA[the shortest path floyd]]></title>
+      <url>/2019/04/29/the-shortest-path-floyd/</url>
+      <content type="html"><![CDATA[<h4 id="what-is-Floyd"><a href="#what-is-Floyd" class="headerlink" title="what is Floyd?"></a>what is Floyd?</h4><p>Floyd,I think it’s  one of the most simple and beautiful algorithm in graph thoery,it only has four lines,but it has a very abundant background.</p>
+<p>Floyd takes  the dynamic programming solution to solve the shortest path problem.Let’s make </p>
+<p><strong>$dp[i][j][k]:$ the shortest path which  only use  point set {1…k} from point i to point j.</strong></p>
+<p><strong>$dp[i][j][k]=min(dp[i][j][k-1],dp[i][k][k-1]+dp[k][j][k-1]])$</strong> </p>
+<p>the above equation means that we can take out the point k,there will be two ways: whether pass the point k.</p>
+<p>if we don’t pass through it,the $dp[i][j][k]=dp[i][j][k-1]$,otherwise,</p>
+<p>there will be two steps,step 1,from point i to point k,and step 2,from point k to point j. that’s to say $dp[i][k][k-1]+dp[k][j][k-1]$ .</p>
+<p>But the above equation will consume a lot of memory,consider that the stage k only concerned with  stage k-1,hence we can use the sliding array.</p>
+<h4 id="How-to-Code-it"><a href="#How-to-Code-it" class="headerlink" title="How to Code it?"></a>How to Code it?</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//init</span></span><br><span class="line"><span class="comment">//if have a path from a to b with cost c ,dp[a][b]=c;</span></span><br><span class="line"><span class="comment">//else dp[a][b]=INF;</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=n;++k)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;++j)</span><br><span class="line">            dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]);</span><br></pre></td></tr></table></figure>
+<p><strong>notice: You should never put k in the second or third loop,because the k stands for the stage.</strong> </p>
+]]></content>
+      
+        
+        <tags>
+            
+            <tag> graph </tag>
+            
+            <tag> dp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[range minimum query]]></title>
       <url>/2019/04/28/range-minimum-query/</url>
       <content type="html"><![CDATA[<h4 id="what’s-the-range-minimum-query"><a href="#what’s-the-range-minimum-query" class="headerlink" title="what’s the range minimum query?"></a>what’s the range minimum query?</h4><p> In general, the range minimum query problem,called RMQ in shortly. it descripes this problem <strong>“Give you an array,you need to answer the query what the minimum value is in segment[i:j]”.</strong> We can divide this problem into two categories,that’s whether the element in the array can be modify.If yes,we may need other algorithms to solve this,such as segement tree etc.But today,I’d like to discuss the another one,that’s the without modifying one.</p>
@@ -99,6 +125,8 @@
         <tags>
             
             <tag> graph </tag>
+            
+            <tag> greedy </tag>
             
         </tags>
         
@@ -330,9 +358,9 @@
         
         <tags>
             
-            <tag> STL </tag>
-            
             <tag> 瞎搞 </tag>
+            
+            <tag> STL </tag>
             
         </tags>
         
@@ -444,9 +472,9 @@
         
         <tags>
             
-            <tag> 思维 </tag>
-            
             <tag> 数学 </tag>
+            
+            <tag> 思维 </tag>
             
         </tags>
         
@@ -533,11 +561,11 @@
         
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 思维 </tag>
             
             <tag> 贪心 </tag>
-            
-            <tag> 数学 </tag>
             
         </tags>
         
@@ -572,11 +600,11 @@
         
         <tags>
             
+            <tag> 数学 </tag>
+            
             <tag> 思维 </tag>
             
             <tag> 贪心 </tag>
-            
-            <tag> 数学 </tag>
             
             <tag> CF CDE </tag>
             
@@ -617,11 +645,11 @@
         
         <tags>
             
+            <tag> topo排序 </tag>
+            
             <tag> 贪心 </tag>
             
             <tag> CF CDE </tag>
-            
-            <tag> topo排序 </tag>
             
         </tags>
         

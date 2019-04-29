@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://sunyinkai.github.io/"/>
-  <updated>2019-04-28T14:45:29.413Z</updated>
+  <updated>2019-04-29T09:18:28.627Z</updated>
   <id>https://sunyinkai.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>the shortest path floyd</title>
+    <link href="https://sunyinkai.github.io/2019/04/29/the-shortest-path-floyd/"/>
+    <id>https://sunyinkai.github.io/2019/04/29/the-shortest-path-floyd/</id>
+    <published>2019-04-29T08:49:00.000Z</published>
+    <updated>2019-04-29T09:18:28.627Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="what-is-Floyd"><a href="#what-is-Floyd" class="headerlink" title="what is Floyd?"></a>what is Floyd?</h4><p>Floyd,I think it’s  one of the most simple and beautiful algorithm in graph thoery,it only has four lines,but it has a very abundant background.</p><p>Floyd takes  the dynamic programming solution to solve the shortest path problem.Let’s make </p><p><strong>$dp[i][j][k]:$ the shortest path which  only use  point set {1…k} from point i to point j.</strong></p><p><strong>$dp[i][j][k]=min(dp[i][j][k-1],dp[i][k][k-1]+dp[k][j][k-1]])$</strong> </p><p>the above equation means that we can take out the point k,there will be two ways: whether pass the point k.</p><p>if we don’t pass through it,the $dp[i][j][k]=dp[i][j][k-1]$,otherwise,</p><p>there will be two steps,step 1,from point i to point k,and step 2,from point k to point j. that’s to say $dp[i][k][k-1]+dp[k][j][k-1]$ .</p><p>But the above equation will consume a lot of memory,consider that the stage k only concerned with  stage k-1,hence we can use the sliding array.</p><h4 id="How-to-Code-it"><a href="#How-to-Code-it" class="headerlink" title="How to Code it?"></a>How to Code it?</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//init</span></span><br><span class="line"><span class="comment">//if have a path from a to b with cost c ,dp[a][b]=c;</span></span><br><span class="line"><span class="comment">//else dp[a][b]=INF;</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">1</span>;k&lt;=n;++k)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;++j)</span><br><span class="line">            dp[i][j]=min(dp[i][j],dp[i][k]+dp[k][j]);</span><br></pre></td></tr></table></figure><p><strong>notice: You should never put k in the second or third loop,because the k stands for the stage.</strong> </p>]]></content>
+    
+    <summary type="html">
+    
+      this content discuss the shortest path algorithm we call it Floyd,it only have four lines.
+    
+    </summary>
+    
+    
+      <category term="graph" scheme="https://sunyinkai.github.io/tags/graph/"/>
+    
+      <category term="dp" scheme="https://sunyinkai.github.io/tags/dp/"/>
+    
+  </entry>
   
   <entry>
     <title>range minimum query</title>
@@ -61,7 +83,7 @@
     <link href="https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/"/>
     <id>https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/</id>
     <published>2019-03-25T14:20:53.000Z</published>
-    <updated>2019-04-28T14:07:15.864Z</updated>
+    <updated>2019-04-29T08:48:34.285Z</updated>
     
     <content type="html"><![CDATA[<h4 id="What’s-the-Shortest-Path"><a href="#What’s-the-Shortest-Path" class="headerlink" title="What’s the Shortest Path?"></a>What’s the Shortest Path?</h4><p>  The shortest path algorithm aims to solve a problem like this,<strong>“ Give you a directed weighted graph(or undirected graph,it doesn’t matter),how to calculate the shortest path  from point A to point B “</strong></p><h4 id="How-to-Solve-it"><a href="#How-to-Solve-it" class="headerlink" title="How to Solve it ?"></a>How to Solve it ?</h4><p>  To solve this problem,I want to talk about the dijkstra algorithm,this algorithm has a premise,that’s <strong>all the edge weight must be a positive number.</strong> I will explain for it soon.</p><p>  This algorithm work as beblow:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">0, init the distance array,make d[A]=0,and d[others]=INF(A is the start point)</span><br><span class="line">1, push A to a set S.</span><br><span class="line">2, from the set S choose a vertex V which V is the most nearest to A,that&apos;s the d[V]=min&#123;d[S]&#125;,and    V has not done the process 3</span><br><span class="line">3, update all the vertexes which connected by V,push these points to the S,and mark the V is done.</span><br><span class="line">4,repeat the 2 and 3 until all the points are done.</span><br></pre></td></tr></table></figure><p>From the above processes we can see that this algorithm choose the point which is nearest to the start point,hence,it’s a greedy algorithm.</p><p>Why it’s correct?</p><p>Consider that D is the point we want to calculate,and B,C are the points which we have worked out.</p><p>the d[D] must be equal to min{d[B]+BD,d[C]+CD},that’s the minimum path from A to D must be equal to one of the neighboring points’ minimum path plus a edge weight.</p><h4 id="How-to-code-it"><a href="#How-to-code-it" class="headerlink" title="How to code it ?"></a>How to code it ?</h4><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2544" target="_blank" rel="noopener">the problem click here</a></p><p>[the code click here ]</p><h4 id="the-shortest-path-tree"><a href="#the-shortest-path-tree" class="headerlink" title="the shortest path tree"></a>the shortest path tree</h4><h4 id="the-shortest-path-graph"><a href="#the-shortest-path-graph" class="headerlink" title="the shortest path graph"></a>the shortest path graph</h4>]]></content>
     
@@ -73,6 +95,8 @@
     
     
       <category term="graph" scheme="https://sunyinkai.github.io/tags/graph/"/>
+    
+      <category term="greedy" scheme="https://sunyinkai.github.io/tags/greedy/"/>
     
   </entry>
   
@@ -261,9 +285,9 @@
     </summary>
     
     
-      <category term="STL" scheme="https://sunyinkai.github.io/tags/STL/"/>
-    
       <category term="瞎搞" scheme="https://sunyinkai.github.io/tags/%E7%9E%8E%E6%90%9E/"/>
+    
+      <category term="STL" scheme="https://sunyinkai.github.io/tags/STL/"/>
     
   </entry>
   
@@ -361,9 +385,9 @@
     </summary>
     
     
-      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
-    
       <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
   </entry>
   
@@ -437,11 +461,11 @@
     </summary>
     
     
+      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
       <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
-      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -464,40 +488,13 @@
     </summary>
     
     
+      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
       <category term="思维" scheme="https://sunyinkai.github.io/tags/%E6%80%9D%E7%BB%B4/"/>
     
       <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
     
-      <category term="数学" scheme="https://sunyinkai.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
-    
       <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>CF909E Coprocessor</title>
-    <link href="https://sunyinkai.github.io/2018/02/11/CF909E/"/>
-    <id>https://sunyinkai.github.io/2018/02/11/CF909E/</id>
-    <published>2018-02-11T04:34:39.000Z</published>
-    <updated>2018-02-11T09:09:18.231Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="题目"><a href="#题目" class="headerlink" title="题目:"></a>题目:</h4><p>You are given a program you want to execute as a set of tasks organized in a dependency graph. The dependency graph is a directed acyclic graph: each task can depend on results of one or several other tasks, and there are no directed circular dependencies between tasks. A task can only be executed if all tasks it depends on have already completed.</p><p>Some of the tasks in the graph can only be executed on a coprocessor, and the rest can only be executed on the main processor. In one coprocessor call you can send it a set of tasks which can only be executed on it. For each task of the set, all tasks on which it depends must be either already completed or be included in the set. The main processor starts the program execution and gets the results of tasks executed on the coprocessor automatically.</p><p>Find the minimal number of coprocessor calls which are necessary to execute the given program.</p><p>Input</p><p>The first line contains two space-separated integers <em>N</em> (1 ≤ <em>N</em> ≤ $10^5$) — the total number of tasks given, and <em>M</em> (0 ≤ <em>M</em> ≤ $10^5$) — the total number of dependencies between tasks.</p><p>The next line contains <em>N</em> space-separated integers <img src="http://codeforces.com/predownloaded/9b/23/9b230264d053f4d67fc85fa445cd108b8120528f.png" alt="img">. If $E_i​$= 0, task <em>i</em> can only be executed on the main processor, otherwise it can only be executed on the coprocessor.</p><p>The next <em>M</em> lines describe the dependencies between tasks. Each line contains two space-separated integers <em>T</em>1 and <em>T</em>2 and means that task <em>T</em>1 depends on task <em>T</em>2 (<em>T</em>1 ≠ <em>T</em>2). Tasks are indexed from 0 to <em>N</em> - 1. All <em>M</em> pairs (<em>T</em>1, <em>T</em>2) are distinct. It is guaranteed that there are no circular dependencies between tasks.</p><p>Output</p><p>Output one line containing an integer — the minimal number of coprocessor calls necessary to execute the program.</p><p>Examples</p><p>input</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 3</span><br><span class="line">0 1 0 1</span><br><span class="line">0 1</span><br><span class="line">1 2</span><br><span class="line">2 3</span><br></pre></td></tr></table></figure><p>output</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure><p>input</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4 3</span><br><span class="line">1 1 1 0</span><br><span class="line">0 1</span><br><span class="line">0 2</span><br><span class="line">3 0</span><br></pre></td></tr></table></figure><p>output</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1</span><br></pre></td></tr></table></figure><h4 id="思路"><a href="#思路" class="headerlink" title="思路:"></a>思路:</h4><p>其实思路还是比较好想的,肯定是要从入度为0的点入手.</p><p><strong><del>solution 1</del></strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">我们不难想到这样一个策略,从入度为0的点入手,如果当前处理的是0,那么res+1,否则一直继续.</span><br><span class="line">然后WA3.</span><br><span class="line">那么我们考虑这样一组数据:</span><br><span class="line">5 4</span><br><span class="line">1 1 0 1 0</span><br><span class="line">0 1</span><br><span class="line">0 2</span><br><span class="line">0 3</span><br><span class="line">0 4</span><br><span class="line">显然不正确,原来是没有考虑顺序,我们先拿0,再拿1不就可以了么.</span><br></pre></td></tr></table></figure><p>  <strong><del>solution 2</del></strong>  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">然后依然WA3.</span><br><span class="line">我们考虑这样一组数据:</span><br><span class="line">5 3</span><br><span class="line">0 1 0 1 0</span><br><span class="line">1 0</span><br><span class="line">2 1</span><br><span class="line">4 3</span><br><span class="line">也不正确</span><br></pre></td></tr></table></figure><p><strong>solution</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">我们维护两个入读为<span class="number">0</span>的队列分别存值为<span class="number">0</span>的点和值为<span class="number">1</span>的点,我们先把度为<span class="number">0</span>的点的队列拿光后,再把度为<span class="number">1</span>的点的队列中点拿光,这样一直做下去就可以了.</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXV=<span class="number">1e5</span>+<span class="number">7</span>,MAXE=<span class="number">1e5</span>+<span class="number">7</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span>&#123;</span></span><br><span class="line"><span class="keyword">int</span> to,next;</span><br><span class="line">&#125;es[MAXE];</span><br><span class="line"><span class="keyword">int</span> head[MAXV],tot;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">tot=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addEdge</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">es[tot].to=b;</span><br><span class="line">es[tot].next=head[a];</span><br><span class="line">head[a]=tot++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> num[MAXV],in[MAXV];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">int</span> V,E;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;V,&amp;E);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;V;++i)<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</span><br><span class="line">init();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;E;++i)&#123;</span><br><span class="line"><span class="keyword">int</span> a,b;<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</span><br><span class="line">addEdge(b,a);</span><br><span class="line">in[a]++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt;q1,q2;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;V;++i)&#123;</span><br><span class="line"><span class="keyword">if</span>(in[i]==<span class="number">0</span>)&#123;</span><br><span class="line"><span class="keyword">if</span>(num[i]==<span class="number">0</span>)q1.push(i);</span><br><span class="line"><span class="keyword">else</span> q2.push(i);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> cnt=V;</span><br><span class="line"><span class="keyword">while</span>(cnt)&#123;</span><br><span class="line"><span class="keyword">while</span>(!q1.empty())&#123;</span><br><span class="line"><span class="keyword">int</span> no=q1.front();q1.pop();</span><br><span class="line">--cnt;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=head[no];~i;i=es[i].next)&#123;</span><br><span class="line"><span class="keyword">int</span> v=es[i].to;</span><br><span class="line">in[v]--;</span><br><span class="line"><span class="keyword">if</span>(in[v]==<span class="number">0</span>)&#123;</span><br><span class="line"><span class="keyword">if</span>(num[v]==<span class="number">0</span>)q1.push(v);</span><br><span class="line"><span class="keyword">else</span> q2.push(v);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">bool</span> flag=<span class="literal">false</span>;</span><br><span class="line"><span class="keyword">while</span>(!q2.empty())&#123;</span><br><span class="line"><span class="keyword">int</span> no=q2.front();q2.pop();</span><br><span class="line">--cnt;</span><br><span class="line">flag=<span class="literal">true</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=head[no];~i;i=es[i].next)&#123;</span><br><span class="line"><span class="keyword">int</span> v=es[i].to;</span><br><span class="line">in[v]--;</span><br><span class="line"><span class="keyword">if</span>(in[v]==<span class="number">0</span>)&#123;</span><br><span class="line"><span class="keyword">if</span>(num[v]==<span class="number">0</span>)q1.push(v);</span><br><span class="line"><span class="keyword">else</span> q2.push(v);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(flag)++res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,res);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h4 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=&quot;headerlink&quot; title=&quot;题目:&quot;&gt;&lt;/a&gt;题目:&lt;/h4&gt;&lt;p&gt;You are given a program you want to execute as a set of tasks organi
-      
-    
-    </summary>
-    
-    
-      <category term="贪心" scheme="https://sunyinkai.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
-      <category term="CF CDE" scheme="https://sunyinkai.github.io/tags/CF-CDE/"/>
-    
-      <category term="topo排序" scheme="https://sunyinkai.github.io/tags/topo%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   

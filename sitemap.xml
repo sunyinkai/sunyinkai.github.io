@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://sunyinkai.github.io/2019/04/28/range-minimum-query/</loc>
+    <loc>https://sunyinkai.github.io/2019/04/29/the-shortest-path-floyd/</loc>
     
-    <lastmod>2019-04-28T14:45:29.413Z</lastmod>
+    <lastmod>2019-04-29T09:18:28.627Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://sunyinkai.github.io/2019/03/25/the-shortest-path-dijkstra/</loc>
     
-    <lastmod>2019-04-28T14:07:15.864Z</lastmod>
+    <lastmod>2019-04-29T08:48:34.285Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sunyinkai.github.io/2019/04/28/range-minimum-query/</loc>
+    
+    <lastmod>2019-04-28T14:45:29.413Z</lastmod>
     
   </url>
   
